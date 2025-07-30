@@ -1,139 +1,462 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>taten - 青少年技术交流社群</title>
-  <style>
-    body {
-      font-family: "Microsoft YaHei", sans-serif;
-      background: #f0f2f5;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background-color: #3b82f6;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 2.5rem;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #3b82f6;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #3b82f6;
-      padding-bottom: 5px;
-    }
-    .members {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .member-card {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      flex: 1 1 200px;
-      text-align: center;
-    }
-    .member-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #eaeaea;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    a.external-link {
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a.external-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATEN - 计算机科学交流团队</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: glow 3s ease-in-out infinite alternate;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.3); }
+            to { text-shadow: 0 0 40px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.4); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover .member-avatar {
+            transform: scale(1.1);
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-website {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .member-website:hover {
+            color: #764ba2;
+        }
+
+        .member-skills {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .member-skills h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .member-bio {
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .projects-section {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .projects-section .section-title {
+            color: white;
+        }
+
+        .projects-section .section-title::after {
+            background: linear-gradient(90deg, #63b3ed, #90cdf4);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+            color: inherit;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .member-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>taten</h1>
-    <nav>
-      <a href="#intro">介绍</a>
-      <a href="#members">成员</a>
-      <a href="#contact">联系</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="intro">
-      <h2>关于taten</h2>
-      <p>taten 是一个由青少年组成的技术交流社群，致力于编程、电子、网络与信息技术的学习与分享。这里汇聚了来自各地的热爱技术的少年，大家共同学习、交流与成长。</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">TATEN</h1>
+        <p class="hero-subtitle">计算机科学交流团队</p>
+        <div class="scroll-indicator" onclick="document.querySelector('.intro-section').scrollIntoView({behavior: 'smooth'})">
+            ⌄
+        </div>
     </section>
 
-    <section id="members">
-      <h2>成员介绍</h2>
-      <div class="members">
-        <div class="member-card">
-          <img src="https://i.pravatar.cc/100?u=member1" alt="成员1" />
-          <h3>成员1</h3>
-          <p>算法爱好者，竞赛选手</p>
-        </div>
-        <div class="member-card">
-          <img src="https://i.pravatar.cc/100?u=member2" alt="成员2" />
-          <h3>成员2</h3>
-          <p>前端开发，网页设计师</p>
-        </div>
-        <div class="member-card">
-          <img src="https://i.pravatar.cc/100?u=member3" alt="成员3" />
-          <h3>成员3</h3>
-          <p>电子爱好者，硬件DIY</p>
-        </div>
-      </div>
+    <!-- 简介部分 -->
+    <section class="section intro-section">
+        <h2 class="section-title">关于我们</h2>
+        <p class="intro-text">
+            TATEN 是一个充满活力的计算机科学交流团队，汇聚了来自不同背景的技术爱好者。我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
+        </p>
     </section>
 
-    <section id="contact">
-      <h2>联系我们</h2>
-      <p>加入我们的QQ群，参与技术讨论：</p>
-      <p><a href="https://jq.qq.com/?_wv=1027&k=xxxxxx" target="_blank" class="external-link">QQ群链接（示例）</a></p>
-      <p>邮箱: <a href="mailto:taten@example.com" class="external-link">taten@example.com</a></p>
-    </section>
-  </main>
+    <!-- 成员部分 -->
+    <section class="section">
+        <h2 class="section-title">团队成员</h2>
+        <div class="members-grid">
+            <!-- 林墨瀚 -->
+            <div class="member-card">
+                <img src="https://s1.imagehub.cc/images/2025/07/30/0a2c858f1fa7d7ff3d480b9e2ab3dce0.jpg" alt="林墨瀚" class="member-avatar">
+                <h3 class="member-name">林墨瀚</h3>
+                <a href="http://home.linmohan.fun" class="member-website" target="_blank">home.linmohan.fun</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>计算机系统，C++，Python，初步算法与数据结构，Linux，服务器运维</p>
+                </div>
+                <p class="member-bio">
+                    你好，我是林墨瀚，一名来自山东的初中生，热爱计算机科学与编程。目前专注于 C++ 和计算机系统方向的学习，正在阅读《CSAPP》和相关系统编程书籍，探索底层原理。我常用 Linux，喜欢动手配置系统、研究原理，也在学习数据结构与算法，准备参与信息学竞赛（CSP-J/S）。我正在构建自己的个人博客与项目网站，记录学习过程，也希望结识更多志同道合的朋友。我相信，计算机不只是工具，更是一种思维方式。
+                </p>
+            </div>
 
-  <footer>
-    &copy; 2025 taten 青少年技术交流社群
-  </footer>
+            <!-- 风与路人 -->
+            <div class="member-card">
+                <img src="https://s1.imagehub.cc/images/2025/07/30/93b3e11a33c2741a3e254bccabb47739.jpg" alt="风与路人" class="member-avatar">
+                <h3 class="member-name">风与路人</h3>
+                <a href="https://yaten.xyz" class="member-website" target="_blank">yaten.xyz</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>C++、Python、Hexo瞎搞、Markdown、KaTeX、沟通协调</p>
+                </div>
+                <p class="member-bio">
+                    halohalo，我是 风与路人。一位平平无奇在读初三生，平时喜欢捣鼓电脑、写代码，也喜欢写数学题，记录灵感与思考。虽然成绩不算顶尖，但我更关注探索知识背后的趣味与逻辑，尤其热爱信息学、文学与哲思类内容。在团队中，我希望用语言、行动和创意为团队添一份力，也愿意和伙伴们共同成长，一起做点有意思的事！本人喜欢电脑、编程、数学、社交。经常emo、发癫qwp。
+                </p>
+            </div>
+
+            <!-- susan -->
+            <div class="member-card">
+                <img src="https://s1.imagehub.cc/images/2025/07/30/c5ac38277c1809ac47f5f749c4fc1fc0.png" alt="susan" class="member-avatar">
+                <h3 class="member-name">susan</h3>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>微积分，线性代数，钢四，MC，高中数学，流体力学，JAVA，俄语</p>
+                </div>
+                <p class="member-bio">
+                    数学与编程的探索者，在理论与实践之间寻找平衡。
+                </p>
+            </div>
+
+            <!-- 叶子 -->
+            <div class="member-card">
+                <img src="https://s1.imagehub.cc/images/2025/07/30/75fb3a7a7532703f2e7f0c095dc417f1.jpg" alt="叶子" class="member-avatar">
+                <h3 class="member-name">叶子</h3>
+                <a href="http://www.LGCM.xyz" class="member-website" target="_blank">www.LGCM.xyz</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>Python HTML PHP CSS 打胶</p>
+                </div>
+                <p class="member-bio">
+                    目前小学6年级，男生，热爱编程，熟练的语言是 Python PHP JavaScript前端开发，生日：七月五日，喜欢的动漫是：别当欧尼酱了!，热爱的游戏 CS GO 原神 绝区零 和部分手游等。年轻的编程天才，用代码书写着属于自己的精彩。
+                </p>
+            </div>
+
+            <!-- Errorsia -->
+            <div class="member-card">
+                <img src="https://s1.imagehub.cc/images/2025/07/30/86668972c5b3fb5e440c6e1bba1f69db.png" alt="Errorsia" class="member-avatar">
+                <h3 class="member-name">Errorsia</h3>
+                <a href="http://errorsia.com" class="member-website" target="_blank">errorsia.com</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>搞机, C++, Python, Linux, 折腾各种数码产品</p>
+                </div>
+                <p class="member-bio">
+                    Hi, 我是 errorsia, 一枚菜鸟, 正在努力的学习英语中。目前正在使用 Python 开发, 正在学习 JavaScript, C++。热爱折腾各种技术和数码产品，在探索中不断成长。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目部分 -->
+    <section class="section projects-section">
+        <h2 class="section-title">我们的项目</h2>
+        <div class="projects-grid">
+            <a href="https://www.bilibili.com/video/BV19QY5egEp3" class="project-card" target="_blank">
+                <img src="https://s1.imagehub.cc/images/2025/07/30/e3d56fc6d07d66d1700d1a3ede2c1ad1.png" alt="susan的视频" class="project-image">
+                <h3 class="project-title">susan的视频</h3>
+                <p>探索数学与编程的奇妙世界，用视频记录学习的点滴收获。</p>
+            </a>
+            <a href="http://book.linmohan.fun" class="project-card" target="_blank">
+                <img src="https://s1.imagehub.cc/images/2025/07/30/99ab3b8a703d186b643809d7e88e8bd0.png" alt="林墨瀚的书库" class="project-image">
+                <h3 class="project-title">林墨瀚的书库</h3>
+                <p>汇集计算机科学经典书籍，构建知识分享的数字图书馆。</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>©2025 TATEN</p>
+    </footer>
+
+    <script>
+        // 添加平滑滚动和动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 观察器用于动画触发
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // 为所有卡片添加观察
+            document.querySelectorAll('.member-card, .project-card').forEach((card) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // 视差效果
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

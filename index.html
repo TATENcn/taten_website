@@ -644,16 +644,12 @@
             }, {
                 threshold: 0.1
             });
-
-            // 为所有卡片添加观察
             document.querySelectorAll('.member-card, .project-card').forEach((card) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(50px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
-
-            // 视差效果
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
                 const hero = document.querySelector('.hero');

@@ -81,7 +81,7 @@
       { name: '浙江', value: 1 }
     ];
 
-    fetch('https://geo.datav.aliyun.com/areas/bound/100000_full.json')
+    fetch('/100000_full.json')
       .then(res => res.json())
       .then(geoJson => {
         echarts.registerMap('china', geoJson);

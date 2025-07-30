@@ -1,140 +1,139 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>中国省份地图（点击跳转）</title>
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>taten - 青少年技术交流社群</title>
   <style>
-    html, body {
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      background: #f0f2f5;
       margin: 0;
       padding: 0;
-      height: 100%;
+      color: #333;
     }
-    #main {
-      width: 100%;
-      height: 100vh;
+    header {
+      background-color: #3b82f6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #3b82f6;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 5px;
+    }
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .member-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eaeaea;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    a.external-link {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.external-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div id="main"></div>
+  <header>
+    <h1>taten</h1>
+    <nav>
+      <a href="#intro">介绍</a>
+      <a href="#members">成员</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
 
-  <script>
-    const chart = echarts.init(document.getElementById('main'));
+  <main>
+    <section id="intro">
+      <h2>关于taten</h2>
+      <p>taten 是一个由青少年组成的技术交流社群，致力于编程、电子、网络与信息技术的学习与分享。这里汇聚了来自各地的热爱技术的少年，大家共同学习、交流与成长。</p>
+    </section>
 
-    const markPoints = [
-    {
-        name: '济南市 平阴县',
-        value: [116.2, 36.1],
-        label: { formatter: '群主' }
-    },
-    {
-        name: '济南市 平阴县',
-        value: [116.5, 36.2960],
-        label: { formatter: 'susan' }
-    },
-    {
-        name: '汕头市 潮阳区',
-        value: [116.6822, 23.3535],
-        label: { formatter: 'Yaten' }
-    },
-    {
-        name: '北京市',
-        value: [116.4074, 39.9042],
-        label: { formatter: 'hungryHenry' }
-    },
-    {
-        name: '厦门市',
-        value: [118.0895, 24.4798],
-        label: { formatter: '叶子' }
-    },
-    {
-        name: '宁波市 鄞州区',
-        value: [121.5440, 29.8683],
-        label: { formatter: 'GuYang17' }
-    },
-    {
-      name: '肇兴市 四会市',
-      value: [112.7330, 23.3265],
-      label: { formatter: 'Lukemich' }
-    },
-    {
-      name: '揭阳市',
-      value: [115.6, 24],  
-      label: { formatter: '❤️萤宝萤宝❤️' }
-    }
-    ];
+    <section id="members">
+      <h2>成员介绍</h2>
+      <div class="members">
+        <div class="member-card">
+          <img src="https://i.pravatar.cc/100?u=member1" alt="成员1" />
+          <h3>成员1</h3>
+          <p>算法爱好者，竞赛选手</p>
+        </div>
+        <div class="member-card">
+          <img src="https://i.pravatar.cc/100?u=member2" alt="成员2" />
+          <h3>成员2</h3>
+          <p>前端开发，网页设计师</p>
+        </div>
+        <div class="member-card">
+          <img src="https://i.pravatar.cc/100?u=member3" alt="成员3" />
+          <h3>成员3</h3>
+          <p>电子爱好者，硬件DIY</p>
+        </div>
+      </div>
+    </section>
 
-    const nameToURL = {
-      '群主': 'https://home.linmohan.fun/',
-      'Yaten': 'https://yaten.xyz/',
-      'hungryHenry': 'https://hungryhenry.cn/',
-      '叶子': 'https://002.lgcm.xyz/',
-      'GuYang17': 'https://guyang17.github.io/'
-    };
+    <section id="contact">
+      <h2>联系我们</h2>
+      <p>加入我们的QQ群，参与技术讨论：</p>
+      <p><a href="https://jq.qq.com/?_wv=1027&k=xxxxxx" target="_blank" class="external-link">QQ群链接（示例）</a></p>
+      <p>邮箱: <a href="mailto:taten@example.com" class="external-link">taten@example.com</a></p>
+    </section>
+  </main>
 
-    const provinceData = [
-      { name: '山东', value: 2 },
-      { name: '广东', value: 3 },
-      { name: '福建', value: 1 },
-      { name: '北京', value: 1 },
-      { name: '浙江', value: 1 }
-    ];
-
-    fetch('/100000_full.json')
-      .then(res => res.json())
-      .then(geoJson => {
-        echarts.registerMap('china', geoJson);
-
-        chart.setOption({
-          title: {
-            text: '中国省份地图（含标注点击跳转）',
-            left: 'center',
-            top: 10
-          },
-          tooltip: {
-            trigger: 'item',
-            formatter: '{b}'
-          },
-          geo: {
-            map: 'china',
-            roam: true,
-            label: { show: true },
-            emphasis: { label: { show: true } }
-          },
-          series: [
-            {
-              name: '省份',
-              type: 'map',
-              map: 'china',
-              geoIndex: 0
-            },
-            {
-              name: '标注',
-              type: 'scatter',
-              coordinateSystem: 'geo',
-              symbol: 'pin',
-              symbolSize: 50,
-              label: {
-                show: true,
-                color: 'black',
-                fontWeight: 'bold'
-              },
-              itemStyle: {
-                color: '#e74c3c'
-              },
-              data: markPoints
-            }
-          ]
-        });
-
-        chart.on('click', function (params) {
-        const person = params.data?.label?.formatter;
-        if (nameToURL[person]) {
-            window.open(nameToURL[person], '_blank');
-        }
-        });
-      });
-  </script>
+  <footer>
+    &copy; 2025 taten 青少年技术交流社群
+  </footer>
 </body>
 </html>

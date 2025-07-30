@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>中国省份地图（点击跳转）</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #main {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="main"></div>
+
+  <script>
+    const chart = echarts.init(document.getElementById('main'));
+
+    const markPoints = [
+    {
+        name: '济南市 平阴县',
+        value: [116.2, 36.1],
+        label: { formatter: '群主' }
+    },
+    {
+        name: '济南市 平阴县',
+        value: [116.5, 36.2960],
+        label: { formatter: 'susan' }
+    },
+    {
+        name: '汕头市 潮阳区',
+        value: [116.6822, 23.3535],
+        label: { formatter: 'Yaten' }
+    },
+    {
+        name: '北京市',
+        value: [116.4074, 39.9042],
+        label: { formatter: 'hungryHenry' }
+    },
+    {
+        name: '厦门市',
+        value: [118.0895, 24.4798],
+        label: { formatter: '叶子' }
+    },
+    {
+        name: '宁波市 鄞州区',
+        value: [121.5440, 29.8683],
+        label: { formatter: 'GuYang17' }
+    },
+    {
+      name: '肇兴市 四会市',
+      value: [112.7330, 23.3265],
+      label: { formatter: 'Lukemich' }
+    },
+    {
+      name: '揭阳市',
+      value: [115.6, 24],  
+      label: { formatter: '❤️萤宝萤宝❤️' }
+    }
+    ];
+
+    const nameToURL = {
+      '群主': 'https://home.linmohan.fun/',
+      'Yaten': 'https://yaten.xyz/',
+      'hungryHenry': 'https://hungryhenry.cn/',
+      '叶子': 'https://002.lgcm.xyz/',
+      'GuYang17': 'https://guyang17.github.io/'
+    };
+
+    const provinceData = [
+      { name: '山东', value: 2 },
+      { name: '广东', value: 3 },
+      { name: '福建', value: 1 },
+      { name: '北京', value: 1 },
+      { name: '浙江', value: 1 }
+    ];
+
+    fetch('https://geo.datav.aliyun.com/areas/bound/100000_full.json')
+      .then(res => res.json())
+      .then(geoJson => {
+        echarts.registerMap('china', geoJson);
+
+        chart.setOption({
+          title: {
+            text: '中国省份地图（含标注点击跳转）',
+            left: 'center',
+            top: 10
+          },
+          tooltip: {
+            trigger: 'item',
+            formatter: '{b}'
+          },
+          geo: {
+            map: 'china',
+            roam: true,
+            label: { show: true },
+            emphasis: { label: { show: true } }
+          },
+          series: [
+            {
+              name: '省份',
+              type: 'map',
+              map: 'china',
+              geoIndex: 0
+            },
+            {
+              name: '标注',
+              type: 'scatter',
+              coordinateSystem: 'geo',
+              symbol: 'pin',
+              symbolSize: 50,
+              label: {
+                show: true,
+                color: 'black',
+                fontWeight: 'bold'
+              },
+              itemStyle: {
+                color: '#e74c3c'
+              },
+              data: markPoints
+            }
+          ]
+        });
+
+        chart.on('click', function (params) {
+        const person = params.data?.label?.formatter;
+        if (nameToURL[person]) {
+            window.open(nameToURL[person], '_blank');
+        }
+        });
+      });
+  </script>
+</body>
+</html>

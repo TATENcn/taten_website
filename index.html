@@ -5,313 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="logo icon" href="logo.ico" type="image/x-icon">
     <title>TATEN - 计算机科学交流团队</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow-x: hidden;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-        }
-
-        .hero-title {
-            font-size: clamp(4rem, 15vw, 12rem);
-            font-weight: 900;
-            color: white;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: glow 3s ease-in-out infinite alternate;
-            position: relative;
-            z-index: 2;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.3); }
-            to { text-shadow: 0 0 40px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.4); }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            animation: bounce 2s infinite;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 2;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            position: relative;
-        }
-
-        .intro-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            text-align: center;
-            border-radius: 20px 20px 0 0;
-            margin-top: -50px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: #2d3748;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .intro-text {
-            font-size: 1.2rem;
-            color: #4a5568;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .member-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .member-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        .member-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .member-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 4px solid #667eea;
-            transition: transform 0.3s ease;
-        }
-
-        .member-card:hover .member-avatar {
-            transform: scale(1.1);
-        }
-
-        .member-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-website {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-
-        .member-website:hover {
-            color: #764ba2;
-        }
-
-        .member-skills {
-            background: #f7fafc;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            border-left: 4px solid #667eea;
-        }
-
-        .member-skills h4 {
-            color: #2d3748;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .member-bio {
-            color: #4a5568;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .projects-section {
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .projects-section .section-title {
-            color: white;
-        }
-
-        .projects-section .section-title::after {
-            background: linear-gradient(90deg, #63b3ed, #90cdf4);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-            color: inherit;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .footer {
-            background: #1a202c;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-            
-            .section {
-                padding: 3rem 1rem;
-            }
-            
-            .members-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .member-card {
-                padding: 1.5rem;
-            }
-        }
-
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 主题切换按钮 -->
+    <div class="theme-toggle" id="themeToggle">
+        <span class="icon">🌙</span>
+        <span class="text">深色模式</span>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <h1 class="hero-title">TATEN</h1>
@@ -421,12 +123,58 @@
         </div>
     </section>
 
+<!-- 联系方式 -->
+<section class="section contact-section">
+    <h2 class="section-title">联系方式</h2>
+    <div class="contact-content">
+        <p><strong>团队QQ群：</strong>1053530079</p>
+        <p><strong>群主（LINMOH）QQ：</strong>2113836986</p>
+        <p><strong>GitHub组织：</strong><a href="https://github.com/TATENcn" target="_blank">https://github.com/TATENcn</a></p>
+    </div>
+</section>
+
     <!-- 页脚 -->
     <footer class="footer">
         <p>©2025 TATEN</p>
     </footer>
 
     <script>
+        // 主题切换功能
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('.icon');
+        const text = themeToggle.querySelector('.text');
+
+        // 检查本地存储的主题设置
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+            icon.textContent = '☀️';
+            text.textContent = '浅色模式';
+        }
+
+        // 主题切换事件
+        themeToggle.addEventListener('click', () => {
+            // 添加旋转动画
+            themeToggle.classList.add('rotating');
+            
+            setTimeout(() => {
+                body.classList.toggle('dark');
+                
+                if (body.classList.contains('dark')) {
+                    icon.textContent = '☀️';
+                    text.textContent = '浅色模式';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    icon.textContent = '🌙';
+                    text.textContent = '深色模式';
+                    localStorage.setItem('theme', 'light');
+                }
+                
+                themeToggle.classList.remove('rotating');
+            }, 150);
+        });
+
         // 添加平滑滚动和动画效果
         document.addEventListener('DOMContentLoaded', function() {
             // 观察器用于动画触发
@@ -440,16 +188,12 @@
             }, {
                 threshold: 0.1
             });
-
-            // 为所有卡片添加观察
             document.querySelectorAll('.member-card, .project-card').forEach((card) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(50px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
-
-            // 视差效果
             window.addEventListener('scroll', () => {
                 const scrolled = window.pageYOffset;
                 const hero = document.querySelector('.hero');

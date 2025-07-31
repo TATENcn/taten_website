@@ -49,4 +49,10 @@ TATEN 是一个由中国学生自发组织的编程社区，成员年龄从小�
 - 联系方式见官网
 - 无需高深背景，只需对技术充满好奇
 
+---
+
+<div id="title" align=center>
+
 © TATEN – Since 2025
+
+</div>

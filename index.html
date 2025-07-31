@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="logo icon" href="favicon.ico" type="image/x-icon">
+    <link rel="logo icon" href="img/favicon.ico" type="image/x-icon">
     <title>TATEN - 计算机科学交流团队</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
 </head>
 <body>
     <!-- 主题切换按钮 -->
@@ -155,70 +156,6 @@
         <p>©2025 TATEN</p>
     </footer>
 
-    <script>
-        // 主题切换功能
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('.icon');
-        const text = themeToggle.querySelector('.text');
 
-        // 检查本地存储的主题设置
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark');
-            icon.textContent = '☀️';
-            text.textContent = '浅色模式';
-        }
-
-        // 主题切换事件
-        themeToggle.addEventListener('click', () => {
-            // 添加旋转动画
-            themeToggle.classList.add('rotating');
-            
-            setTimeout(() => {
-                body.classList.toggle('dark');
-                
-                if (body.classList.contains('dark')) {
-                    icon.textContent = '☀️';
-                    text.textContent = '浅色模式';
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    icon.textContent = '🌙';
-                    text.textContent = '深色模式';
-                    localStorage.setItem('theme', 'light');
-                }
-                
-                themeToggle.classList.remove('rotating');
-            }, 150);
-        });
-
-        // 添加平滑滚动和动画效果
-        document.addEventListener('DOMContentLoaded', function() {
-            // 观察器用于动画触发
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            document.querySelectorAll('.member-card, .project-card').forEach((card) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(50px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                if (hero) {
-                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                }
-            });
-        });
-    </script>
 </body>
 </html>

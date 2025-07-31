@@ -6,8 +6,11 @@
 
 [TATEN 官网](https://tatencn.github.io/taten/) | [GitHub 主页](https://github.com/tatencn)
 
----
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Technology%2C+Algorithms%2C+Terminals%2C+Engineering+%2C+Networks)](https://git.io/typing-svg)
+
 </div>
+
+---
 ## 🧠 关于我们
 
 TATEN 是一个由中国学生自发组织的编程社区，成员年龄从小学六年级到高中三年级。我们热爱计算机、开源项目与工程实践。无论是算法、前后端开发、App、游戏制作，还是服务器运维，我们都勇于尝试、持续学习。

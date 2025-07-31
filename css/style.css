@@ -375,6 +375,7 @@ body.dark {
 
 .project-card {
     background: rgba(255,255,255,0.1);
+    border-radius: 10px;
     border-radius: 15px;
     padding: 2rem;
     backdrop-filter: blur(10px);

@@ -375,7 +375,9 @@ body.dark {
 
 .project-card {
     background: rgba(255,255,255,0.1);
+    border-radius: 15px;
     padding: 2rem;
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -411,7 +413,7 @@ body.dark {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-} 
+}
 
 .footer {
     background: #1a202c;
@@ -464,6 +466,7 @@ body.dark {
 }
 .contact-section {
     background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 20px;
     text-align: center;
     transition: background 0.3s ease;
 }

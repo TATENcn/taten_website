@@ -495,3 +495,7 @@ body.dark {
 .contact-content a:hover {
     text-decoration: underline;
 }
+
+.contact-section {
+    border-radius: 0 !important;
+}

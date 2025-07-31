@@ -464,7 +464,6 @@ body.dark {
 }
 .contact-section {
     background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    border-radius: 20px;
     text-align: center;
     transition: background 0.3s ease;
 }

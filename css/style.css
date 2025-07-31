@@ -496,6 +496,12 @@ body.dark {
     text-decoration: underline;
 }
 
+.github-corner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
 .contact-section {
     border-radius: 0 !important;
 }

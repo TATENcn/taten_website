@@ -1,3 +1,4 @@
+<div id="title" align=center>
 # TATEN
 
 > 一群热爱编程的六年级到高三学生，致力于探索技术的无限可能。
@@ -5,7 +6,7 @@
 [TATEN 官网](https://tatencn.github.io/taten/) | [GitHub 主页](https://github.com/tatencn)
 
 ---
-
+</div>
 ## 🧠 关于我们
 
 TATEN 是一个由中国学生自发组织的编程社区，成员年龄从小学六年级到高中三年级。我们热爱计算机、开源项目与工程实践。无论是算法、前后端开发、App、游戏制作，还是服务器运维，我们都勇于尝试、持续学习。

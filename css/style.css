@@ -377,7 +377,6 @@ body.dark {
     background: rgba(255,255,255,0.1);
     border-radius: 15px;
     padding: 2rem;
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
     transition: all 0.3s ease;
     cursor: pointer;

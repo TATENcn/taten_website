@@ -4,7 +4,7 @@
 
 > 一群热爱编程的学生，致力于探索技术的无限可能。
 
-[TATEN 官网](https://tatencn.github.io/taten/) | [GitHub 主页](https://github.com/tatencn)
+[TATEN 官网](https://taten.xyz) | [GitHub 主页](https://github.com/tatencn)
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&pause=1000&width=435&lines=Technology+Algorithms+Thread+Engineering+Networks)](https://git.io/typing-svg)
 

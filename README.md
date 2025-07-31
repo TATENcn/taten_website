@@ -6,7 +6,7 @@
 
 [TATEN 官网](https://tatencn.github.io/taten/) | [GitHub 主页](https://github.com/tatencn)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Playwrite+Australia+QLD&weight=80&size=15&pause=1000&width=435&lines=Technology%2C+Algorithms%2C+Terminals%2C+Engineering+%2C+Network)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Technology+Algorithms+Thread+Engineering+Networks)](https://git.io/typing-svg)
 
 </div>
 

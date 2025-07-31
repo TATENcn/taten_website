@@ -455,7 +455,6 @@ body.dark {
 .glassmorphism {
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
-    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -465,7 +464,6 @@ body.dark {
 }
 .contact-section {
     background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    border-radius: 0px;
     text-align: center;
     transition: background 0.3s ease;
 }
@@ -503,4 +501,7 @@ body.dark {
     top: 0;
     left: 0;
     z-index: 9999;
+}
+.contact-section {
+    border-radius: 0 !important;
 }

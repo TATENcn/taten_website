@@ -46,9 +46,9 @@ TATEN 是一个由各地的初中生与高中生自发组织的技术交流团�
 
 | 项目名称 | 简介 | 参与者 | 状态 |
 |----------|------|--------|------|
-| (团队主页)[taten.xyz] | 展示团队信息、项目入口与联系方式的静态网站 | All Members | 已完成 |
-| (猜歌游戏)[https://github.com/hungryhenry101/Rhythm-Riddle] | 使用 Flutter 开发的猜歌游戏，多平台支持 | [HungryHenry](https://github.com/hungryhenry101) | 已完成 |
-| (LINMOH の 书库)[https://book.linmohan.fun/] | 精选优质电子书资源，助力学习成长 | [LINMOH](https://github.com/LINMOH) | 已完成 |
+| [团队主页](taten.xyz) | 展示团队信息、项目入口与联系方式的静态网站 | All Members | 已完成 |
+| [猜歌游戏](https://github.com/hungryhenry101/Rhythm-Riddle) | 使用 Flutter 开发的猜歌游戏，多平台支持 | [HungryHenry](https://github.com/hungryhenry101) | 已完成 |
+| [LINMOH の 书库](https://book.linmohan.fun/) | 精选优质电子书资源，助力学习成长 | [LINMOH](https://github.com/LINMOH) | 已完成 |
 
 ---
 

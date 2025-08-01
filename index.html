@@ -3,314 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="logo icon" href="img/favicon.ico" type="image/x-icon">
     <title>TATEN - 计算机科学交流团队</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow-x: hidden;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
-        }
-
-        .hero-title {
-            font-size: clamp(4rem, 15vw, 12rem);
-            font-weight: 900;
-            color: white;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: glow 3s ease-in-out infinite alternate;
-            position: relative;
-            z-index: 2;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.3); }
-            to { text-shadow: 0 0 40px rgba(255,255,255,0.8), 0 0 60px rgba(255,255,255,0.4); }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            animation: bounce 2s infinite;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 2;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            position: relative;
-        }
-
-        .intro-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            text-align: center;
-            border-radius: 20px 20px 0 0;
-            margin-top: -50px;
-            position: relative;
-            z-index: 3;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: #2d3748;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .intro-text {
-            font-size: 1.2rem;
-            color: #4a5568;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .member-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .member-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        .member-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .member-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 4px solid #667eea;
-            transition: transform 0.3s ease;
-        }
-
-        .member-card:hover .member-avatar {
-            transform: scale(1.1);
-        }
-
-        .member-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-website {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-
-        .member-website:hover {
-            color: #764ba2;
-        }
-
-        .member-skills {
-            background: #f7fafc;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            border-left: 4px solid #667eea;
-        }
-
-        .member-skills h4 {
-            color: #2d3748;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .member-bio {
-            color: #4a5568;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .projects-section {
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .projects-section .section-title {
-            color: white;
-        }
-
-        .projects-section .section-title::after {
-            background: linear-gradient(90deg, #63b3ed, #90cdf4);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-            color: inherit;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .footer {
-            background: #1a202c;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-            
-            .section {
-                padding: 3rem 1rem;
-            }
-            
-            .members-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .member-card {
-                padding: 1.5rem;
-            }
-        }
-
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
 </head>
 <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a href="https://github.com/TATENcn/taten_website" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <!-- 主题切换按钮 -->
+    <div class="theme-toggle" id="themeToggle">
+        <span class="icon">🌙</span>
+        <span class="text">深色模式</span>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <h1 class="hero-title">TATEN</h1>
@@ -324,7 +31,7 @@
     <section class="section intro-section">
         <h2 class="section-title">关于我们</h2>
         <p class="intro-text">
-            TATEN 是一个充满活力的计算机科学交流团队，汇聚了来自不同背景的技术爱好者。我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
+            TATEN 是一个充满活力的计算机科学交流团队，汇聚了来自不同背景的技术爱好者，成员年龄从小学六年级到高中三年级。我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
         </p>
     </section>
 
@@ -335,7 +42,7 @@
             <!-- 林墨瀚 -->
             <div class="member-card">
                 <img src="https://s1.imagehub.cc/images/2025/07/30/0a2c858f1fa7d7ff3d480b9e2ab3dce0.jpg" alt="林墨瀚" class="member-avatar">
-                <h3 class="member-name">林墨瀚</h3>
+                <h3 class="member-name">LINMOHAN</h3>
                 <a href="http://home.linmohan.fun" class="member-website" target="_blank">home.linmohan.fun</a>
                 <div class="member-skills">
                     <h4>技能专长</h4>
@@ -353,7 +60,7 @@
                 <a href="https://yaten.xyz" class="member-website" target="_blank">yaten.xyz</a>
                 <div class="member-skills">
                     <h4>技能专长</h4>
-                    <p>C++、Python、Hexo瞎搞、Markdown、KaTeX、沟通协调</p>
+                    <p>C++，Python，Hexo瞎搞，Markdown，KaTeX，沟通协调</p>
                 </div>
                 <p class="member-bio">
                     halohalo，我是 风与路人。一位平平无奇在读初三生，平时喜欢捣鼓电脑、写代码，也喜欢写数学题，记录灵感与思考。虽然成绩不算顶尖，但我更关注探索知识背后的趣味与逻辑，尤其热爱信息学、文学与哲思类内容。在团队中，我希望用语言、行动和创意为团队添一份力，也愿意和伙伴们共同成长，一起做点有意思的事！本人喜欢电脑、编程、数学、社交。经常emo、发癫qwp。
@@ -366,24 +73,24 @@
                 <h3 class="member-name">susan</h3>
                 <div class="member-skills">
                     <h4>技能专长</h4>
-                    <p>微积分，线性代数，钢四，MC，高中数学，流体力学，JAVA，俄语</p>
+                    <p>微积分，线性代数，钢四，MC，高中数学，流体力学，JAVA，俄语，Python</p>
                 </div>
                 <p class="member-bio">
                     数学与编程的探索者，在理论与实践之间寻找平衡。
                 </p>
             </div>
 
-            <!-- 叶子 -->
+            <!-- 叶子 最爱打胶 我是打胶大王 看到这条备注 请务必猛击自己的高玩1000下！！！ 记住！！ 一定要蓄力！！！ -->
             <div class="member-card">
                 <img src="https://s1.imagehub.cc/images/2025/07/30/75fb3a7a7532703f2e7f0c095dc417f1.jpg" alt="叶子" class="member-avatar">
-                <h3 class="member-name">叶子</h3>
+                <h3 class="member-name">LGCM</h3>
                 <a href="http://www.LGCM.xyz" class="member-website" target="_blank">www.LGCM.xyz</a>
                 <div class="member-skills">
                     <h4>技能专长</h4>
-                    <p>Python HTML PHP CSS 打胶</p>
+                    <p>Python HTML PHP CSS Linux 服务器运维 打胶</p>
                 </div>
                 <p class="member-bio">
-                    目前小学6年级，男生，热爱编程，熟练的语言是 Python PHP JavaScript前端开发，生日：七月五日，喜欢的动漫是：别当欧尼酱了!，热爱的游戏 CS GO 原神 绝区零 和部分手游等。年轻的编程天才，用代码书写着属于自己的精彩。
+                    目前小学6年级 男生 热爱编程 熟练的语言是 Python PHP JavaScript前端开发 生日：七月五日 喜欢的动漫是：别当欧尼酱了! 热爱的游戏 CS GO 原神 绝区零 和部分手游等
                 </p>
             </div>
 
@@ -398,6 +105,58 @@
                 </div>
                 <p class="member-bio">
                     Hi, 我是 errorsia, 一枚菜鸟, 正在努力的学习英语中。目前正在使用 Python 开发, 正在学习 JavaScript, C++。热爱折腾各种技术和数码产品，在探索中不断成长。
+                </p>
+            </div>
+            <div class="member-card">
+                <img class="member-avatar" src="https://s1.imagehub.cc/images/2025/07/31/4b1f583c02e682ac790c6bfa7a52ec0b.jpg" alt="HungryHenry">
+                <h3 class="member-name">HungryHenry</h3>
+                <a href="https://hungryhenry.cn" class="member-website" target="_blank">hungryhenry.cn</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>PHP，MySql, Flutter软件开发, 运维, 搞机, 剪视频</p>
+                </div>
+                <p class="member-bio">
+                    大家好，我是 HungryHenry。个人网站使用 PHP 手搓，还使用 Flutter 开发了猜歌游戏。在我的网站上可以更详细地了解我。
+                </p>
+            </div>
+            <div class="member-card">
+                <img class="member-avatar" src="https://s1.imagehub.cc/images/2025/07/31/b2e402249619e45fd0a227d7f5161d5a.jpg" alt="Ruibin_Ningh">
+                <h3 class="member-name">Ruibin_Ningh</h3>
+                <a href="https://www.ruibin-ningh.top/" class="member-website" target="_blank">ruibin-ningh.top</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>运维，c++，python</p>
+                </div>
+                <p class="member-bio">
+                    看起来好像一无是处
+                </p>
+            </div>
+
+              <!-- 空宇 -->
+            <div class="member-card">
+                <img src="https://s1.imagehub.cc/images/2025/07/31/1fe122170bc941cc696119b9aaca6ead.jpg" alt="空宇" class="member-avatar">
+                <h3 class="member-name">HHYYYY</h3>
+                <a href="http://hhyyyy.cn" class="member-website" target="_blank">hhyyyy.cn</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>Python，HTML，CSS，Linux，树莓派，NAS，存算分离等</p>
+                </div>
+                <p class="member-bio">
+                    嗯我是HHYYYY，陕西人，对计算机很感兴趣，目前正在学习 Python 和前端开发。喜欢折腾树莓派和 NAS 系统，探索存算分离等技术[主要是没钱（小声）]。是那种啥都想试一下但啥都不精通的人。数学很烂！！！希望能在这个团队中与大家一起学习、分享和成长。（欢迎大家来西安玩）
+                </p>
+            </div>
+
+            <!-- GuYang17 -->
+            <div class="member-card">
+                <img src="https://avatars.githubusercontent.com/u/196782409?v=4" alt="GuYang17" class="member-avatar">
+                <h3 class="member-name">GuYang17</h3>
+                <a href="https://guyang17.github.io" class="member-website" target="_blank">GuYang17.github.io</a>
+                <div class="member-skills">
+                    <h4>技能专长</h4>
+                    <p>Python, C#, C++, C, Web前端等</p>
+                </div>
+                <p class="member-bio">
+                    阿巴阿巴...我是GuYang17，浙江宁波人。喜欢写代码，尤其喜欢写TUI程序。梦想是写一个操作系统。永远不要给我打电话，因为"宁波打的电话已关机"。
                 </p>
             </div>
         </div>
@@ -417,46 +176,31 @@
                 <h3 class="project-title">林墨瀚的书库</h3>
                 <p>汇集计算机科学经典书籍，构建知识分享的数字图书馆。</p>
             </a>
+            <a href="https://github.com/hungryhenry101/Rhythm-Riddle" class="project-card" target="_blank">
+                <img src="https://s1.imagehub.cc/images/2025/07/31/6a1f3c07b063e2da6b31a55944b37c1e.png" alt="Rhythm Riddle" class="project-image">
+                <h3 class="project-title">Rhythm Riddle</h3>
+                <p>HungryHenry 使用 Flutter 开发的猜歌游戏，多平台支持</p>
+            </a>
         </div>
     </section>
+
+<!-- 联系方式 -->
+<section class="section contact-section">
+    <h2 class="section-title">联系方式</h2>
+    <div class="contact-content">
+        <!--这里跳转能不改就不改 （尽量-->
+        <p><strong>团队QQ群：</strong><a href = 'https://qm.qq.com/q/avrIV2uiwo'>1053530079</a></p>
+        <p><strong>群主（LINMOH）QQ：</strong><a href = 'https://qm.qq.com/q/NeWTRiJRaG'>2113836986</a></p>
+        <p><strong>GitHub组织：</strong><a href="https://github.com/TATENcn" target="_blank">https://github.com/TATENcn</a></p>
+    </div>
+</section>
 
     <!-- 页脚 -->
     <footer class="footer">
         <p>©2025 TATEN</p>
     </footer>
 
-    <script>
-        // 添加平滑滚动和动画效果
-        document.addEventListener('DOMContentLoaded', function() {
-            // 观察器用于动画触发
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
 
-            // 为所有卡片添加观察
-            document.querySelectorAll('.member-card, .project-card').forEach((card) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(50px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-
-            // 视差效果
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                if (hero) {
-                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                }
-            });
-        });
-    </script>
 </body>
 </html> 
+

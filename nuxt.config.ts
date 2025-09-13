@@ -8,6 +8,9 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
+  builder: "vite",
+
   modules: ["@nuxt/eslint", "@nuxt/image"],
 
   srcDir: "app",

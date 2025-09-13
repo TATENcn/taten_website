@@ -13,24 +13,26 @@
     <div class="members">
       <div class="title">团队成员</div>
       <div class="member-items">
-        <MemberCard
+        <div
           v-for="member in members"
           :key="member.name"
-          :value="member"
-          class="member-item"
-        />
+          class="member-wrapper"
+        >
+          <MemberCard :value="member" />
+        </div>
       </div>
     </div>
 
     <div class="projects">
       <div class="title">团队项目</div>
       <div class="projects-items">
-        <ProjectCard
+        <div
           v-for="project in projects"
           :key="project.title"
-          :value="project"
-          class="project"
-        />
+          class="project-wrapper"
+        >
+          <ProjectCard :value="project" />
+        </div>
       </div>
     </div>
 
@@ -55,3 +57,63 @@ import { useProject } from "~/assets/data/projects";
 const members = useMembers();
 const projects = useProject();
 </script>
+
+<style lang="scss" scoped>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .about,
+  .members,
+  .projects,
+  .contact {
+    margin-block-end: 40px;
+
+    .title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #333;
+      margin-block-end: 20px;
+      padding-block-end: 10px;
+      border-block-end: 1px solid #e5e5e5;
+      text-align: center;
+    }
+
+    .introduction {
+      color: #555;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+  }
+
+  .member-items,
+  .projects-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    .contact-item {
+      color: #666;
+      text-decoration: none;
+      padding: 12px 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      background-color: #fafafa;
+
+      &:hover {
+        color: #333;
+        border-color: #ccc;
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
+</style>

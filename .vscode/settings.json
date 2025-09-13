@@ -1,0 +1,7 @@
+{
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false,
+  "path-intellisense.mappings": {
+    "/": "${workspaceFolder}/public"
+  }
+}

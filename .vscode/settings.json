@@ -2,6 +2,7 @@
   "typescript.suggest.paths": false,
   "javascript.suggest.paths": false,
   "path-intellisense.mappings": {
-    "/": "${workspaceFolder}/public"
+    "/": "${workspaceFolder}/public",
+    "~": "${workspaceFolder}/src"
   }
 }

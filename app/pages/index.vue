@@ -1,19 +1,17 @@
 <template>
   <div class="container">
-    <ClientOnly>
-      <div ref="landerRef" class="lander">
-        <div
-          class="lander-content"
-          :style="{ transform: `translateY(${landerOffsetY}px)` }"
-        >
-          <h1 class="main-title">TATEN</h1>
-          <div class="typing-container">
-            <span class="typed-text">{{ currentText }}</span>
-            <span class="cursor" :class="{ typing: isTyping }">|</span>
-          </div>
+    <div ref="landerRef" class="lander">
+      <div
+        class="lander-content"
+        :style="{ transform: `translateY(${landerOffsetY}px)` }"
+      >
+        <h1 class="main-title">TATEN</h1>
+        <div class="typing-container">
+          <span class="typed-text">{{ currentText }}</span>
+          <span class="cursor" :class="{ typing: isTyping }">|</span>
         </div>
       </div>
-    </ClientOnly>
+    </div>
 
     <div class="about">
       <div class="title">关于我们</div>

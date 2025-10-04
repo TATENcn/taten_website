@@ -5,6 +5,7 @@
         :src="value.avatarUrl"
         :alt="`${value.name}'s avatar'`"
         class="avatar"
+        loading="lazy"
       />
       <div class="info">
         <div class="name">{{ value.name }}</div>

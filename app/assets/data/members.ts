@@ -130,6 +130,27 @@ export const useMembers = (): IMember[] => {
         "大家好，我是CN059，现在已经大二了，来自河北衡水，就读于云南某普通本科，喜欢折腾各种计算机技术，中期目标是想用Rust开发一个高性能分布式OJ系统，喜欢C/C++，一直在努力打ACM竞赛（虽然一般般就是了），我还想搞各种嵌入式设备。目标是实现只依靠自己或加上好朋友一起的努力，完成一切有趣的想法。拿技术武装自己。\n我喜欢搞的东西实在是很多，你跟我聊什么我大概都会很感兴趣，欢迎和我交流，人畜无害哦~\n喜欢很可爱的东西，喜欢大家(//･v･//)",
       blogWebsite: "https://www.cn059.com/",
     },
+    {
+      avatarUrl:
+        "https://s1.imagehub.cc/images/2025/10/04/ad075fc420e282b7da4caca19546e6a3.jpg",
+      blogWebsite: "https://bryasxin.github.io/nuxt-blog",
+      introduction: `
+      大家好，我是 HalFLinEF，或者叫我 XinHallow，目前学习了前端很多知识，也尝试通过 NestJS 搭建项目，最终选择了 Rust 开发路线，希望我能和大家一起努力，一起进步。
+      欢迎大家和我说话喵~喜欢可爱的东西，是个音游吃小猫娘喵~
+      `,
+      name: "HalFLinEF",
+      skills: [
+        "前端(TS, H5, CSS3)",
+        "前端框架(Vue3, React, Svelte)",
+        "Java 基础",
+        "后端框架(SpringBoot, Rocket)",
+        "C/C++ 基础",
+        "后端(Rust)",
+        "运维(Podman(Docker), K8S)",
+        "MQ(RabbitMQ, Kafka)",
+        "数据库(PostgreSQL, MongoDB, Redis(?))",
+      ],
+    },
   ];
 };
 

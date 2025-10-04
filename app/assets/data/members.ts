@@ -112,6 +112,24 @@ export const useMembers = (): IMember[] => {
         "我是Zyx_2012，一名来自北京的初中牲，正在学习前端（html,css,js,vue）以及c++（主要是为了信竞，不然我肯定学py）。喜欢捣鼓一些奇怪的东西（之前给学校网站xss了，然后没过两天帖子被删了QAQ），热爱编程。爱好有minecraft、c++、白嫖各种各样免费的东西（因：没有银行卡）。擅长 PS、Pr、Ae、Au、Ai、Dw、An、Id 等软件的安装与卸载，熟练掌握malbolge、brainfuck、whitespace、haskell、prolog的拼写，熟悉 Windows、Linux、Mac、Android、IOS 等系统的开关机。这就是我的全部特点 ：）",
       blogWebsite: "https://blog.zyx-2012.cn",
     },
+    {
+      avatarUrl: "https://www.cn059.com/wp-content/uploads/2025/05/CN059.jpg",
+      name: "CN059",
+      skills: [
+        "C/C++",
+        "Rust",
+        "Java",
+        "Vue",
+        "全栈",
+        "服务器运维",
+        "网工",
+        "ACM",
+        "“剩下的一切计算机相关内容”",
+      ],
+      introduction:
+        "大家好，我是CN059，现在已经大二了，来自河北衡水，就读于云南某普通本科，喜欢折腾各种计算机技术，中期目标是想用Rust开发一个高性能分布式OJ系统，喜欢C/C++，一直在努力打ACM竞赛（虽然一般般就是了），我还想搞各种嵌入式设备。目标是实现只依靠自己或加上好朋友一起的努力，完成一切有趣的想法。拿技术武装自己。\n我喜欢搞的东西实在是很多，你跟我聊什么我大概都会很感兴趣，欢迎和我交流，人畜无害哦~\n喜欢很可爱的东西，喜欢大家(//･v･//)",
+      blogWebsite: "https://www.cn059.com/",
+    },
   ];
 };
 

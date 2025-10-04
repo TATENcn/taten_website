@@ -104,6 +104,14 @@ export const useMembers = (): IMember[] => {
         "阿巴阿巴...我是GuYang17，浙江宁波人。喜欢写代码，尤其喜欢写TUI程序。梦想是写一个操作系统。永远不要给我打电话，因为“宁波打的电话已关机”。",
       blogWebsite: "https://guyang17.github.io/",
     },
+    {
+      avatarUrl: "https://blog.zyx-2012.cn/img/avatar.png",
+      name: "Zyx_2012",
+      skills: ["HTML", "CSS", "JAVASCRIPT", "C++", "CHATGPT(划掉)"],
+      introduction:
+        "我是Zyx_2012，一名来自北京的初中牲，正在学习前端（html,css,js,vue）以及c++（主要是为了信竞，不然我肯定学py）。喜欢捣鼓一些奇怪的东西（之前给学校网站xss了，然后没过两天帖子被删了QAQ），热爱编程。爱好有minecraft、c++、白嫖各种各样免费的东西（因：没有银行卡）。擅长 PS、Pr、Ae、Au、Ai、Dw、An、Id 等软件的安装与卸载，熟练掌握malbolge、brainfuck、whitespace、haskell、prolog的拼写，熟悉 Windows、Linux、Mac、Android、IOS 等系统的开关机。这就是我的全部特点 ：）",
+      blogWebsite: "https://blog.zyx-2012.cn",
+    },
   ];
 };
 

@@ -5,7 +5,9 @@
         class="lander-content"
         :style="{ transform: `translateY(${landerOffsetY}px)` }"
       >
-        <h1 class="main-title">TATEN</h1>
+        <div class="logo">
+          <LazyNuxtImg src="/favicon-new.svg" alt="favicon" />
+        </div>
         <div class="typing-container">
           <span class="typed-text">{{ currentText }}</span>
           <span class="cursor" :class="{ typing: isTyping }">|</span>
@@ -167,31 +169,9 @@ onUnmounted(() => {
   .lander-content {
     transition: transform 0.1s ease-out;
 
-    .main-title {
-      font-size: 5rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #333;
-      text-shadow:
-        0 0 3px #bbb,
-        0 0 6px #bbb,
-        0 0 9px #bbb;
-      animation: glow 1.5s ease-in-out infinite alternate;
-
-      @keyframes glow {
-        from {
-          text-shadow:
-            0 0 3px #bbb,
-            0 0 6px #bbb,
-            0 0 9px #bbb;
-        }
-        to {
-          text-shadow:
-            0 0 5px #bbb,
-            0 0 10px #bbb,
-            0 0 15px #bbb;
-        }
-      }
+    .logo > img {
+      height: 6rem;
+      margin-bottom: 1rem;
     }
 
     .typing-container {

@@ -58,7 +58,7 @@
           GitHub：TATEN
         </nuxt-link>
         <nuxt-link class="contact-item" href="https://qm.qq.com/q/NeWTRiJRaG">
-          QQ：2113836986
+          QQ：1035124292
         </nuxt-link>
       </div>
     </div>

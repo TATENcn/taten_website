@@ -2,7 +2,7 @@ export const useMembers = (): IMember[] => {
   return [
     {
       avatarUrl:
-        "https://s1.imagehub.cc/images/2025/07/30/0a2c858f1fa7d7ff3d480b9e2ab3dce0.jpg",
+        "https://s1.imagehub.cc/images/2025/10/18/99d5d57c7013acb6c92305314cc66374.png",
       name: "LINMOHAN",
       skills: [
         "计算机系统",

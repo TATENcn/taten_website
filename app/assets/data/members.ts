@@ -133,7 +133,7 @@ export const useMembers = (): IMember[] => {
     {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/10/04/ad075fc420e282b7da4caca19546e6a3.jpg",
-      blogWebsite: "https://bryasxin.github.io/nuxt-blog",
+      blogWebsite: "https://halfline.vercel.app/",
       introduction: `
       大家好，我是 HalFLinEF，或者叫我 XinHallow，目前学习了前端很多知识，也尝试通过 NestJS 搭建项目，最终选择了 Rust 开发路线，希望我能和大家一起努力，一起进步。
       欢迎大家和我说话喵~喜欢可爱的东西，是个音游吃小猫娘喵~

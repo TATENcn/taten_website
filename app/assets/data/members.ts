@@ -3,18 +3,20 @@ export const useMembers = (): IMember[] => {
     {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/10/18/99d5d57c7013acb6c92305314cc66374.png",
-      name: "LINMOHAN",
+      name: "Lin Mohan",
       skills: [
-        "计算机系统",
-        "C++",
+        "操作系统",
+        "计组",
+        "C/C++",
         "Python",
         "Linux",
-        "初步算法与数据结构",
-        "服务器运维",
+        "算法与数据结构",
+        "运维",
+        "垃圾佬",
       ],
       introduction:
-        "你好，我是林墨瀚，一名来自山东的初中生，热爱计算机科学与编程。目前专注于 C++ 和计算机系统方向的学习，正在阅读《CSAPP》和相关系统编程书籍，探索底层原理。我常用 Linux，喜欢动手配置系统、研究原理，也在学习数据结构与算法，准备参与信息学竞赛（CSP-J/S）。我正在构建自己的个人博客与项目网站，记录学习过程，也希望结识更多志同道合的朋友。我相信，计算机不只是工具，更是一种思维方式。",
-      blogWebsite: "http://home.linmohan.fun/",
+        "你好，我是 Lin Mohan，一名来自山东的初中生，团队的发起者兼组织者。我热爱计算机科学与编程，喜欢研究系统底层与技术原理。熟悉 Python 与 C/C++，正在阅读《深入理解计算机系统》《现代操作系统》等书籍，并学习 408 考研相关内容。我曾学习过 OI，也在不断探索数据结构与算法。动手搭建系统、理解原理，是我最享受的过程。现在，我希望聚集更多热爱技术的中学生，一起学习、创造、交流，共同成长。",
+      blogWebsite: "https://home.linmohan.fun/",
     },
     {
       avatarUrl:
@@ -31,11 +33,11 @@ export const useMembers = (): IMember[] => {
       name: "susan",
       skills: [
         "微积分",
-        "线性代",
+        "线性代数",
         "钢四",
         "MC",
-        "高中数",
-        "流体力",
+        "高中数学",
+        "流体力学",
         "JAVA",
         "俄语",
         "Python",
@@ -70,6 +72,7 @@ export const useMembers = (): IMember[] => {
         "大家好，我是 HungryHenry。个人网站使用 PHP 手搓，还使用 Flutter 开发了猜歌游戏。在我的网站上可以更详细地了解我。",
       blogWebsite: "https://hungryhenry.cn/",
     },
+    /*
     {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/07/31/b2e402249619e45fd0a227d7f5161d5a.jpg",
@@ -78,6 +81,7 @@ export const useMembers = (): IMember[] => {
       introduction: "看起来好像一无是处",
       blogWebsite: "https://www.ruibin-ningh.top/",
     },
+    */
     {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/07/31/1fe122170bc941cc696119b9aaca6ead.jpg",
@@ -104,6 +108,7 @@ export const useMembers = (): IMember[] => {
         "阿巴阿巴...我是GuYang17，浙江宁波人。喜欢写代码，尤其喜欢写TUI程序。梦想是写一个操作系统。永远不要给我打电话，因为“宁波打的电话已关机”。",
       blogWebsite: "https://guyang17.github.io/",
     },
+    /*
     {
       avatarUrl: "https://blog.zyx-2012.cn/img/avatar.png",
       name: "Zyx_2012",
@@ -112,6 +117,7 @@ export const useMembers = (): IMember[] => {
         "我是Zyx_2012，一名来自北京的初中牲，正在学习前端（html,css,js,vue）以及c++（主要是为了信竞，不然我肯定学py）。喜欢捣鼓一些奇怪的东西（之前给学校网站xss了，然后没过两天帖子被删了QAQ），热爱编程。爱好有minecraft、c++、白嫖各种各样免费的东西（因：没有银行卡）。擅长 PS、Pr、Ae、Au、Ai、Dw、An、Id 等软件的安装与卸载，熟练掌握malbolge、brainfuck、whitespace、haskell、prolog的拼写，熟悉 Windows、Linux、Mac、Android、IOS 等系统的开关机。这就是我的全部特点 ：）",
       blogWebsite: "https://blog.zyx-2012.cn",
     },
+    */
     {
       avatarUrl: "https://www.cn059.com/wp-content/uploads/2025/05/CN059.jpg",
       name: "CN059",

@@ -158,6 +158,15 @@ export const useMembers = (): IMember[] => {
         "MQ(RabbitMQ, Kafka)",
         "数据库(PostgreSQL, MongoDB, Redis(?))",
       ],
+    },{
+      avatarUrl:"https://s1.imagehub.cc/images/2025/10/20/6b40c73972ab7a46d003bd72d544d57e.png",
+      name:"Lukemich",
+      blogWebsite:"https://saintforence.dpdns.org/",
+      introduction:`
+      你好，我是Lukemich，一名正在读电气工程专业的本科生，平时喜欢研究技术背后的原理，也热衷于探索思维、语言与系统之间的关系。目前正在学习嵌入式开发与 Linux 系统，同时也在关注半导体与计算机体系结构等方向。
+      我对编程的兴趣更多来自“理解”而非“造物”，喜欢分析技术如何运作、概念如何演化，也偶尔写一些小项目验证想法。除了技术之外，我还喜欢写作、阅读与反思，记录观察到的世界与心境。
+      希望在这个团队里，不仅能交流技术，也能交流思考方式，一起搭建属于我们的知识与精神空间。`,
+      skills:["C语言","Linux"],
     },
   ];
 };

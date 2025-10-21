@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 
   builder: "vite",
 
-  modules: ["@nuxt/eslint", "@nuxt/image"],
+  modules: ["@unocss/nuxt", "@nuxt/eslint", "@nuxt/image"],
 
   srcDir: "app",
 

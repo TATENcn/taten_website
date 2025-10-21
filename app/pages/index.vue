@@ -1,69 +1,82 @@
 <template>
-  <div class="container">
-    <div ref="landerRef" class="lander">
-      <div
-        class="lander-content"
-        :style="{ transform: `translateY(${landerOffsetY}px)` }"
-      >
-        <div class="logo">
-          <LazyNuxtImg src="/favicon-new.svg" alt="favicon" />
-        </div>
-        <div class="typing-container">
-          <span class="typed-text">{{ currentText }}</span>
-          <span class="cursor" :class="{ typing: isTyping }">|</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="about">
-      <div class="title">关于我们</div>
-      <div class="introduction">
-        TATEN 是一个充满活力的计算机科学交流团队，
-        汇聚了来自不同背景的技术爱好者，成员年龄从小学六年级到高中三年级。
-        我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。
-        在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
-      </div>
-    </div>
-
-    <div class="members">
-      <div class="title">团队成员</div>
-      <div class="member-items">
-        <div
-          v-for="member in members"
-          :key="member.name"
-          class="member-wrapper"
-        >
-          <MemberCard :data="member" />
+  <div class="max-w-screen-xl mx-auto p-8">
+    <!-- Lander -->
+    <div
+      ref="landerRef"
+      class="h-screen flex items-center justify-center text-center"
+      :style="{ transform: `translateY(${landerOffsetY}px)` }"
+    >
+      <div class="flex items-center flex-col">
+        <LazyNuxtImg src="/favicon-new.svg" alt="favicon" class="h-24 mb-8" />
+        <div class="text-2xl color-neutral-600 min-h-8">
+          {{ currentText }}
         </div>
       </div>
     </div>
 
-    <div class="projects">
-      <div class="title">团队项目</div>
-      <div class="projects-items">
-        <div
-          v-for="project in projects"
-          :key="project.title"
-          class="project-wrapper"
-        >
-          <ProjectCard :data="project" />
+    <div class="flex flex-col gap-y-16">
+      <!-- About Us -->
+      <div>
+        <div class="title">关于我们</div>
+        <div class="color-neutral-800 text-xl">
+          TATEN 是一个充满活力的计算机科学交流团队，
+          汇聚了来自不同背景的技术爱好者，成员年龄从小学六年级到高中三年级。
+          我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。
+          在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
         </div>
       </div>
-    </div>
 
-    <div class="contact">
-      <div class="title">联系我们</div>
-      <div class="contact-items">
-        <nuxt-link class="contact-item" href="https://github.com/TATENcn">
-          GitHub：TATEN
-        </nuxt-link>
-        <nuxt-link class="contact-item" href="https://qm.qq.com/q/FOcdqbRHOK">
-          QQ：1035124292
-        </nuxt-link>
+      <!-- Members -->
+      <div>
+        <div class="title">团队成员</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div v-for="member in members" :key="member.name">
+            <MemberCard :data="member" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div>
+        <div class="title">团队项目</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            v-for="project in projects"
+            :key="project.title"
+            class="project-wrapper"
+          >
+            <ProjectCard :data="project" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="title">联系我们</div>
+        <div class="flex flex-wrap gap-8 justify-center">
+          <nuxt-link
+            class="text-neutral-800 no-underline py-1 px-2 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition"
+            href="https://github.com/TATENcn"
+          >
+            GitHub：TATEN
+          </nuxt-link>
+          <nuxt-link
+            class="text-neutral-800 no-underline py-1 px-2 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition"
+            href="https://qm.qq.com/q/FOcdqbRHOK"
+          >
+            QQ：1035124292
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style lang="css" scoped>
+.title {
+  @apply text-4xl text-neutral-800 mb-8 pb-4 border-b border-neutral-200 text-center;
+}
+</style>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
@@ -77,191 +90,50 @@ const currentText = ref("");
 const textIndex = ref(0);
 const charIndex = ref(0);
 const isDeleting = ref(false);
-const isTyping = ref(false);
-const typingSpeed = ref(100);
-const deletingSpeed = ref(50);
-const delayBetweenTexts = ref(2000);
 let typingTimer: ReturnType<typeof setTimeout> | null = null;
 
 const landerRef = ref<HTMLElement | null>(null);
 const landerOffsetY = ref(0);
-let scrollHandler: (() => void) | null = null;
 
 const typeText = () => {
-  if (!typingTexts.value || typingTexts.value.length === 0) return;
+  if (!typingTexts.value?.length) return;
 
-  const currentTextItem = typingTexts.value[textIndex.value];
+  const current = typingTexts.value[textIndex.value];
+  if (!current) return;
 
-  if (!currentTextItem) return;
-
-  if (!isDeleting.value) {
-    if (charIndex.value < currentTextItem.length) {
-      currentText.value = currentTextItem.substring(0, charIndex.value + 1);
-      charIndex.value++;
-      isTyping.value = true;
-      typingTimer = setTimeout(typeText, typingSpeed.value);
-    } else {
-      isTyping.value = false;
-      typingTimer = setTimeout(() => {
-        isDeleting.value = true;
-        typeText();
-      }, delayBetweenTexts.value);
-    }
+  if (!isDeleting.value && charIndex.value < current.length) {
+    currentText.value = current.substring(0, ++charIndex.value);
+    typingTimer = setTimeout(typeText, 100);
+  } else if (!isDeleting.value) {
+    typingTimer = setTimeout(() => {
+      isDeleting.value = true;
+      typeText();
+    }, 2000);
+  } else if (charIndex.value > 0) {
+    currentText.value = current.substring(0, --charIndex.value);
+    typingTimer = setTimeout(typeText, 50);
   } else {
-    if (charIndex.value > 0) {
-      currentText.value = currentTextItem.substring(0, charIndex.value - 1);
-      charIndex.value--;
-      isTyping.value = true;
-      typingTimer = setTimeout(typeText, deletingSpeed.value);
-    } else {
-      isDeleting.value = false;
-      isTyping.value = false;
-      textIndex.value = (textIndex.value + 1) % typingTexts.value.length;
-      typingTimer = setTimeout(typeText, typingSpeed.value);
-    }
+    isDeleting.value = false;
+    textIndex.value = (textIndex.value + 1) % typingTexts.value.length;
+    typeText();
   }
 };
 
 const handleScroll = () => {
-  if (!landerRef.value) return;
-
-  const scrollY = window.scrollY;
-  landerOffsetY.value = scrollY * 0.4;
+  if (landerRef.value) {
+    landerOffsetY.value = window.scrollY * 0.4;
+  }
 };
 
 onMounted(() => {
-  if (typingTexts.value && typingTexts.value.length > 0) {
-    typeText();
+  if (typingTexts.value?.length) {
+    typingTimer = setTimeout(typeText, 100);
   }
-
-  scrollHandler = () => handleScroll();
-  window.addEventListener("scroll", scrollHandler);
+  window.addEventListener("scroll", handleScroll);
 });
 
 onUnmounted(() => {
-  if (typingTimer) {
-    clearTimeout(typingTimer);
-  }
-
-  if (scrollHandler) {
-    window.removeEventListener("scroll", scrollHandler);
-  }
+  if (typingTimer) clearTimeout(typingTimer);
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
-
-<style lang="scss" scoped>
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.lander {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: -20px -20px 40px -20px;
-
-  .lander-content {
-    transition: transform 0.1s ease-out;
-
-    .logo > img {
-      height: 6rem;
-      margin-bottom: 1rem;
-    }
-
-    .typing-container {
-      font-size: 1.5rem;
-      color: #666;
-      min-height: 2rem;
-      text-shadow:
-        0 0 1px #ccc,
-        0 0 3px #ccc;
-
-      .typed-text {
-        display: inline-block;
-      }
-
-      .cursor {
-        display: inline-block;
-        margin-left: 3px;
-        opacity: 1;
-        animation: blink 1s infinite;
-        text-shadow:
-          0 0 1px #ccc,
-          0 0 3px #ccc;
-
-        &.typing {
-          animation: none;
-          opacity: 1;
-        }
-      }
-
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
-        }
-      }
-    }
-  }
-}
-
-.about,
-.members,
-.projects,
-.contact {
-  margin-block-start: 2rem;
-  margin-block-end: 40px;
-
-  .title {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #333;
-    margin-block-end: 20px;
-    padding-block-end: 10px;
-    border-block-end: 1px solid #e5e5e5;
-    text-align: center;
-  }
-
-  .introduction {
-    color: #555;
-    line-height: 1.8;
-    font-size: 1.1rem;
-  }
-}
-
-.member-items,
-.projects-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
-}
-
-.contact-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-
-  .contact-item {
-    color: #666;
-    text-decoration: none;
-    padding: 12px 24px;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    background-color: #fafafa;
-
-    &:hover {
-      color: #333;
-      border-color: #ccc;
-      background-color: #f0f0f0;
-    }
-  }
-}
-</style>

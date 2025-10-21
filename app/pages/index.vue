@@ -67,13 +67,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import { useMembers } from "~/assets/data/members";
-import { useProject } from "~/assets/data/projects";
-import { useTypingText } from "~/assets/data/typing-text";
 
-const members = useMembers();
-const projects = useProject();
-const typingTexts = useTypingText();
+// 从服务器获取成员和项目数据
+const { data: members } = await useFetch("/api/members");
+const { data: projects } = await useFetch("/api/projects");
+const { data: typingTexts } = await useFetch("/api/typing-text");
 
 const currentText = ref("");
 const textIndex = ref(0);
@@ -90,9 +88,9 @@ const landerOffsetY = ref(0);
 let scrollHandler: (() => void) | null = null;
 
 const typeText = () => {
-  if (typingTexts.length === 0) return;
+  if (!typingTexts.value || typingTexts.value.length === 0) return;
 
-  const currentTextItem = typingTexts[textIndex.value];
+  const currentTextItem = typingTexts.value[textIndex.value];
 
   if (!currentTextItem) return;
 
@@ -118,7 +116,7 @@ const typeText = () => {
     } else {
       isDeleting.value = false;
       isTyping.value = false;
-      textIndex.value = (textIndex.value + 1) % typingTexts.length;
+      textIndex.value = (textIndex.value + 1) % typingTexts.value.length;
       typingTimer = setTimeout(typeText, typingSpeed.value);
     }
   }
@@ -132,7 +130,7 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
-  if (typingTexts.length > 0) {
+  if (typingTexts.value && typingTexts.value.length > 0) {
     typeText();
   }
 

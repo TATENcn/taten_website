@@ -33,7 +33,7 @@
           :key="member.name"
           class="member-wrapper"
         >
-          <MemberCard :value="member" />
+          <MemberCard :data="member" />
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
           :key="project.title"
           class="project-wrapper"
         >
-          <ProjectCard :value="project" />
+          <ProjectCard :data="project" />
         </div>
       </div>
     </div>

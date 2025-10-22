@@ -180,5 +180,22 @@ export default defineEventHandler((): IMember[] => {
       希望在这个团队里，不仅能交流技术，也能交流思考方式，一起搭建属于我们的知识与精神空间。`,
       skills: ["C语言", "Linux"],
     },
+    {
+      avatarUrl:
+        "https://s1.imagehub.cc/images/2025/10/22/7f5c85486bfcb75003e696b06cb154b7.jpg",
+      name: "Meteorite",
+      blogWebsite: "https://saintforence.dpdns.org/",
+      introduction: `Hi！我是Meteorite，2010年出生，来自上海，刚刚开始学习JavaScript，写代码，学习日语，追番，吉他，好像什么都是新人呢喵~ 虽然没有团队里面其他成员那么厉害啦，但是真的很荣幸加入这里，因为我一直对TATEN很向往喵，从今年（25年）夏天从知乎了解到TATEN之后就一直想努力学习争取可以加入团队，结果技术还没有学多少呢就先被队长拉进来了🤣目前最能拿得出手的应该就是英语了吧，在备考雅思喵喵。最喜欢的番是《别当欧尼酱了！》（刚刚入坑），之前是一个资深哈迷，会几十种咒语呢！Expelliarmus！`,
+      skills: [
+        "Python",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "英语",
+        "Hexo",
+        "Markdown",
+        "吉他",
+      ],
+    },
   ];
 });

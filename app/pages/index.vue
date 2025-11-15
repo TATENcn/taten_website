@@ -18,7 +18,7 @@
       <!-- About Us -->
       <div>
         <div class="title">关于我们</div>
-        <div class="color-neutral-800 text-xl">
+        <div class="color-neutral-800 text-xl leading-loose">
           TATEN 是一个充满活力的计算机科学交流团队，
           汇聚了来自不同背景的技术爱好者，成员年龄从初一到本科。
           我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。
@@ -55,16 +55,22 @@
         <div class="title">联系我们</div>
         <div class="flex flex-wrap gap-8 justify-center">
           <nuxt-link
-            class="text-neutral-800 no-underline py-1 px-2 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition"
+            class="text-neutral-800 no-underline py-2 px-4 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition flex items-center"
             href="https://github.com/TATENcn"
           >
             GitHub：TATEN
           </nuxt-link>
           <nuxt-link
-            class="text-neutral-800 no-underline py-1 px-2 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition"
-            href="https://qm.qq.com/q/FOcdqbRHOK"
+            class="text-neutral-800 no-underline py-2 px-4 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition flex items-center"
+            href="https://qm.qq.com/q/RSYq4zfLCm"
           >
-            QQ：1035124292
+            QQ：加入交流群
+          </nuxt-link>
+          <nuxt-link
+            class="text-neutral-800 no-underline py-2 px-4 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition flex items-center"
+            href="https://qm.qq.com/q/rTx4p8vrZC"
+          >
+            QQ：加入 TATEN
           </nuxt-link>
         </div>
       </div>

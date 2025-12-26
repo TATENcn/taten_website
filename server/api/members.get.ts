@@ -13,7 +13,7 @@ export default defineEventHandler((): IMember[] => {
     {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/10/18/99d5d57c7013acb6c92305314cc66374.png",
-      name: "Lin Mohan",
+      name: "LinMohan",
       skills: [
         "操作系统",
         "计组",
@@ -22,7 +22,6 @@ export default defineEventHandler((): IMember[] => {
         "Linux",
         "算法与数据结构",
         "运维",
-        "垃圾佬",
         "视频剪辑",
         "渲染",
       ],
@@ -142,7 +141,6 @@ export default defineEventHandler((): IMember[] => {
         "服务器运维",
         "网工",
         "ACM",
-        "“剩下的一切计算机相关内容”",
       ],
       introduction:
         "大家好，我是CN059，现在已经大二了，来自河北衡水，就读于云南某普通本科，喜欢折腾各种计算机技术，中期目标是想用Rust开发一个高性能分布式OJ系统，喜欢C/C++，一直在努力打ACM竞赛（虽然一般般就是了），我还想搞各种嵌入式设备。目标是实现只依靠自己或加上好朋友一起的努力，完成一切有趣的想法。拿技术武装自己。\n我喜欢搞的东西实在是很多，你跟我聊什么我大概都会很感兴趣，欢迎和我交流，人畜无害哦~\n喜欢很可爱的东西，喜欢大家(//･v･//)",
@@ -156,9 +154,9 @@ export default defineEventHandler((): IMember[] => {
         "大家好，我是 HalFLinEF，或者叫我 XinHallow。目前学习了很多技术栈，但是没有什么能拿得出手的项目。希望我能和大家一起努力，一起进步。",
       name: "HalFLinEF",
       skills: [
-        "前端(TS, H5, CSS3)",
-        "前端框架(Vue3, React19, Svelte)",
-        "后端框架(SpringBoot, Ktor)",
+        "前端",
+        "前端框架",
+        "后端框架",
         "Rust+Tokio+Axum+SeaOrm",
         "Podman/Docker",
         "PostgreSQL 和 MongoDB",

@@ -1,145 +1,575 @@
 <template>
-  <div class="max-w-screen-xl mx-auto p-8">
-    <!-- Lander -->
-    <div
-      ref="landerRef"
-      class="h-screen flex items-center justify-center text-center"
-      :style="{ transform: `translateY(${landerOffsetY}px)` }"
+  <div
+    class="bg-[#0a0a0a] text-white font-mono min-h-screen selection:bg-red-600 selection:text-white overflow-x-hidden"
+  >
+    <header
+      class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1800px] border-b border-white bg-[#0a0a0a] z-50 grid grid-cols-3 px-4 py-1 text-[10px] uppercase tracking-widest"
     >
-      <div class="flex items-center flex-col">
-        <LazyNuxtImg src="/favicon-new.svg" alt="favicon" class="h-24 mb-8" />
-        <div class="text-2xl color-neutral-600 min-h-8">
-          {{ currentText }}
-        </div>
+      <div class="flex gap-4">
+        <span class="hidden sm:inline">IP: {{ visitorIp }}</span>
       </div>
-    </div>
+      <div class="animate-pulse text-green-500 text-center">● RUNNING</div>
+      <div class="text-right">{{ systemTime }}</div>
+    </header>
 
-    <div class="flex flex-col gap-y-16">
-      <!-- About Us -->
-      <div>
-        <div class="title">关于我们</div>
-        <div class="color-neutral-800 text-xl leading-loose">
-          TATEN 是一个充满活力的计算机科学交流团队，
-          汇聚了来自不同背景的技术爱好者，成员年龄从初一到本科。
-          我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。
-          在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
-        </div>
-      </div>
-
-      <!-- Members -->
-      <div>
-        <div class="title">团队成员</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="member in members" :key="member.name">
-            <MemberCard :data="member" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects -->
-      <div>
-        <div class="title">团队项目</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="max-w-[1800px] mx-auto border-x border-white/20 relative">
+      <div
+        ref="landerRef"
+        class="h-[80vh] flex flex-col items-center justify-center relative will-change-transform"
+        :style="{ transform: `translateY(${offsetY}px)` }"
+      >
+        <div class="z-10 text-center px-4">
+          <h1
+            class="text-[clamp(3.5rem,18vw,14rem)] font-black italic leading-[0.75] uppercase mb-10 tracking-tighter"
+          >
+            TAT<span class="text-red-600">E</span>N
+          </h1>
           <div
-            v-for="project in projects"
-            :key="project.title"
-            class="project-wrapper"
+            class="text-sm md:text-base border border-white px-6 py-3 inline-block tracking-widest uppercase"
           >
-            <ProjectCard :data="project" />
+            PROTOCOL_CMD: {{ currentTypingText
+            }}<span class="animate-ping">|</span>
           </div>
         </div>
       </div>
 
-      <!-- Contact -->
-      <div>
-        <div class="title">联系我们</div>
-        <div class="flex flex-wrap gap-8 justify-center">
-          <nuxt-link
-            class="text-neutral-800 no-underline py-2 px-4 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition flex items-center"
-            href="https://github.com/TATENcn"
+      <main
+        class="grid grid-cols-1 lg:grid-cols-12 border-b border-white bg-black"
+      >
+        <section class="lg:col-span-4 border-r border-white p-0 flex flex-col">
+          <div
+            class="p-6 border-b border-white bg-white text-black flex justify-between items-center"
           >
-            GitHub：TATEN
-          </nuxt-link>
-          <nuxt-link
-            class="text-neutral-800 no-underline py-2 px-4 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition flex items-center"
-            href="https://qm.qq.com/q/RSYq4zfLCm"
+            <h2 class="text-2xl font-black uppercase tracking-tighter">
+              01_MISSION
+            </h2>
+            <span class="text-[10px] font-bold">EST. 2025.7.30</span>
+          </div>
+          <div class="p-10 flex-1 flex flex-col justify-between">
+            <p class="text-lg leading-relaxed text-neutral-400">
+              TATEN 是一个充满活力的计算机科学交流团队，<br />
+              汇聚了来自不同背景的技术爱好者，成员年龄从初一到本科。<br />
+              我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。<br />
+              在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
+            </p>
+            <div class="text-[10px] text-neutral-600 uppercase mt-8 font-bold">
+              End_of_File // About
+            </div>
+          </div>
+        </section>
+
+        <section class="lg:col-span-8 p-0 border-t border-white lg:border-t-0">
+          <div
+            class="p-6 border-b border-white bg-white text-black flex justify-between items-center"
           >
-            QQ：加入交流群
-          </nuxt-link>
-          <nuxt-link
-            class="text-neutral-800 no-underline py-2 px-4 border border-neutral-200 bg-neutral-100 hover:border-neutral-300 hover:bg-neutral-200 transition flex items-center"
-            href="https://qm.qq.com/q/rTx4p8vrZC"
+            <h2 class="text-2xl font-black uppercase tracking-tighter">
+              02_OPERATORS
+            </h2>
+            <span class="text-xs font-bold font-sans"
+              >COUNT: {{ members?.length || 0 }}</span
+            >
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div
+              v-for="(member, index) in members"
+              :key="member.name"
+              class="group relative h-[320px] border-b border-r border-white overflow-hidden bg-[#0a0a0a] cursor-crosshair"
+            >
+              <div
+                class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none group-hover:opacity-[0.08] transition-opacity uppercase"
+              >
+                {{ member.name.substring(0, 2) }}
+              </div>
+
+              <div
+                class="relative h-full p-10 flex flex-col justify-between z-10"
+              >
+                <div>
+                  <div
+                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center justify-between"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-2 h-2 bg-red-600"
+                        :class="{ 'animate-pulse': index === 0 }"
+                      ></span>
+                      [ {{ getMemberRole(member, index) }} ]
+                    </div>
+                    <span class="opacity-40 font-mono"
+                      >ID:{{ formatId(index) }}</span
+                    >
+                  </div>
+
+                  <div class="flex gap-4 items-start mb-4">
+                    <div
+                      class="size-12 border border-white/20 p-0.5 grayscale group-hover:grayscale-0 group-hover:border-red-600 transition-all shrink-0"
+                    >
+                      <img
+                        :src="member.avatarUrl"
+                        class="w-full h-full object-cover"
+                        :alt="member.name"
+                      />
+                    </div>
+                    <h3
+                      class="text-4xl font-black italic tracking-tighter uppercase group-hover:text-red-600 transition-colors leading-none"
+                    >
+                      {{ member.name }}
+                    </h3>
+                  </div>
+
+                  <div class="relative mt-2 h-20">
+                    <div
+                      class="absolute inset-0 text-sm text-neutral-400 leading-relaxed overflow-y-auto custom-scrollbar pr-2 transition-all duration-700 ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] group-hover:text-white text-justify [text-justify:inter-character]"
+                    >
+                      <span class="text-red-600 mr-1 font-bold">>></span>
+                      {{ member.introduction }}
+                      <div class="h-2"></div>
+                    </div>
+                    <div
+                      class="absolute top-0 left-0 w-[1px] h-full bg-red-600 opacity-0 group-hover:opacity-100 group-hover:left-full transition-all duration-700 ease-out pointer-events-none shadow-[0_0_8px_rgba(220,38,38,0.8)]"
+                    ></div>
+                  </div>
+
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <span
+                      v-for="skill in member.skills.slice(0, 3)"
+                      :key="skill"
+                      class="text-[9px] border border-white/20 px-1.5 py-0.5 opacity-60 group-hover:opacity-100 group-hover:border-red-600 transition-colors uppercase"
+                    >
+                      #{{ skill }}
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
+                >
+                  <div class="flex flex-col">
+                    <span class="text-[10px] uppercase opacity-40 italic"
+                      >Node_Endpoint:</span
+                    >
+                    <span class="text-[10px] font-bold truncate max-w-[150px]">
+                      {{ formatWebsite(member.blogWebsite) }}
+                    </span>
+                  </div>
+                  <NuxtLink
+                    v-if="member.blogWebsite"
+                    :to="member.blogWebsite"
+                    target="_blank"
+                    class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:text-red-600"
+                  >
+                    >>
+                  </NuxtLink>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-red-600/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="lg:col-span-12 border-t border-white">
+          <div
+            class="p-6 border-b border-white bg-white text-black flex justify-between items-center"
           >
-            QQ：加入 TATEN
-          </nuxt-link>
-        </div>
-      </div>
+            <h2 class="text-2xl font-black uppercase tracking-tighter">
+              04_JOIN_PROTOCOL
+            </h2>
+            <span class="text-[10px] font-bold tracking-[0.2em]"
+              >STATUS: OPEN_ACCESS</span
+            >
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <div
+              class="relative h-[320px] border-r border-b border-white bg-[#0a0a0a] p-10 flex flex-col justify-between group overflow-hidden"
+            >
+              <div
+                class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none uppercase"
+              >
+                INFO
+              </div>
+              <p
+                class="text-sm text-neutral-400 leading-relaxed uppercase italic z-10"
+              >
+                // 期待每一位对代码充满向往的开发者。<br /><br />
+              </p>
+              <div
+                class="text-[10px] text-neutral-600 font-bold uppercase z-10"
+              >
+                System_Manifesto
+              </div>
+            </div>
+
+            <NuxtLink
+              to="https://github.com/TATENcn"
+              target="_blank"
+              class="group relative h-[320px] border-r border-b border-white overflow-hidden bg-[#0a0a0a]"
+            >
+              <div
+                class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none group-hover:opacity-[0.08] transition-opacity uppercase"
+              >
+                GH
+              </div>
+              <div
+                class="relative h-full p-10 flex flex-col justify-between z-10"
+              >
+                <div>
+                  <div
+                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2"
+                  >
+                    <span class="w-2 h-2 bg-red-600"></span> [ PROJECTS ]
+                  </div>
+                  <h3
+                    class="text-4xl font-black italic tracking-tighter uppercase mb-4 group-hover:text-red-600 transition-colors leading-none"
+                  >
+                    GITHUB
+                  </h3>
+                  <div
+                    class="relative h-20 text-sm text-neutral-400 leading-relaxed [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] transition-all duration-700 group-hover:text-white"
+                  >
+                    <span class="text-red-600 mr-1 font-bold">>></span>
+                    访问我们的代码仓库，查看当前活跃项目，别忘了点亮 Star 和
+                    Follow。
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
+                >
+                  <span
+                    class="text-[10px] font-bold uppercase opacity-40 italic"
+                    >@TATENcn</span
+                  >
+                  <div
+                    class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
+                  >
+                    >>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-red-600/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"
+              ></div>
+            </NuxtLink>
+
+            <NuxtLink
+              to="https://qm.qq.com/q/RSYq4zfLCm"
+              target="_blank"
+              class="group relative h-[320px] border-r border-b border-white overflow-hidden bg-[#0a0a0a]"
+            >
+              <div
+                class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none group-hover:opacity-[0.08] transition-opacity uppercase"
+              >
+                QQ
+              </div>
+              <div
+                class="relative h-full p-10 flex flex-col justify-between z-10"
+              >
+                <div>
+                  <div
+                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2"
+                  >
+                    <span class="w-2 h-2 bg-red-600"></span> [ QQ_GROUP_LINK ]
+                  </div>
+                  <h3
+                    class="text-4xl font-black italic tracking-tighter uppercase mb-4 group-hover:text-red-600 transition-colors leading-none"
+                  >
+                    QQ_GROUP
+                  </h3>
+                  <div
+                    class="relative h-20 text-sm text-neutral-400 leading-relaxed [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] transition-all duration-700 group-hover:text-white"
+                  >
+                    <span class="text-red-600 mr-1 font-bold">>></span> 加入 QQ
+                    群，展开技术交流。
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
+                >
+                  <span
+                    class="text-[10px] font-bold uppercase opacity-40 italic"
+                    >TATEN_LEARN</span
+                  >
+                  <div
+                    class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
+                  >
+                    >>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-red-600/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"
+              ></div>
+            </NuxtLink>
+
+            <NuxtLink
+              to="https://qm.qq.com/q/NeWTRiJRaG"
+              target="_blank"
+              class="group relative h-[320px] border-b border-white overflow-hidden bg-[#0a0a0a]"
+            >
+              <div
+                class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none group-hover:opacity-[0.08] transition-opacity uppercase"
+              >
+                JN
+              </div>
+              <div
+                class="relative h-full p-10 flex flex-col justify-between z-10"
+              >
+                <div>
+                  <div
+                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2"
+                  >
+                    <span class="w-2 h-2 bg-red-600 animate-ping"></span> [
+                    JOIN_US ]
+                  </div>
+                  <h3
+                    class="text-4xl font-black italic tracking-tighter uppercase mb-4 group-hover:text-red-600 transition-colors leading-none"
+                  >
+                    JOIN_NOW
+                  </h3>
+                  <div
+                    class="relative h-20 text-sm text-neutral-400 leading-relaxed [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] transition-all duration-700 group-hover:text-white"
+                  >
+                    <span class="text-red-600 mr-1 font-bold">>></span> 添加 Lin
+                    Mohan 的 QQ，提交加入申请。通过验证后即可加入团队。
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
+                >
+                  <span
+                    class="text-[10px] font-bold uppercase opacity-40 italic"
+                    >@Lin_Mohan</span
+                  >
+                  <div
+                    class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
+                  >
+                    >>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-red-600/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"
+              ></div>
+            </NuxtLink>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="p-8 text-center text-[12px] text-neutral-600 uppercase tracking-[0.4em] font-mono"
+      >
+        Team Runtime · Since Establishment · {{ systemRuntime }}
+      </footer>
     </div>
   </div>
 </template>
 
-<style lang="css" scoped>
-.title {
-  @apply text-4xl text-neutral-800 mb-8 pb-4 border-b border-neutral-200 text-center;
-}
-</style>
-
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
-// 从服务器获取成员和项目数据
-const { data: members } = await useFetch("/api/members");
-const { data: projects } = await useFetch("/api/projects");
-const { data: typingTexts } = await useFetch("/api/typing-text");
-
-const currentText = ref("");
-const textIndex = ref(0);
-const charIndex = ref(0);
-const isDeleting = ref(false);
-let typingTimer: ReturnType<typeof setTimeout> | null = null;
-
-const landerRef = ref<HTMLElement | null>(null);
-const landerOffsetY = ref(0);
-
-const typeText = () => {
-  if (!typingTexts.value?.length) return;
-
-  const current = typingTexts.value[textIndex.value];
-  if (!current) return;
-
-  if (!isDeleting.value && charIndex.value < current.length) {
-    currentText.value = current.substring(0, ++charIndex.value);
-    typingTimer = setTimeout(typeText, 100);
-  } else if (!isDeleting.value) {
-    typingTimer = setTimeout(() => {
-      isDeleting.value = true;
-      typeText();
-    }, 2000);
-  } else if (charIndex.value > 0) {
-    currentText.value = current.substring(0, --charIndex.value);
-    typingTimer = setTimeout(typeText, 50);
-  } else {
-    isDeleting.value = false;
-    textIndex.value = (textIndex.value + 1) % typingTexts.value.length;
-    typeText();
-  }
+/**
+ * CONSTANTS: 业务常量定义
+ */
+const START_DATE = new Date("2025-07-30T00:00:00");
+const SCROLL_FACTOR = 0.5; // 视差系数
+const TYPING_CONFIG = {
+  SPEED: 80,
+  DELETE_SPEED: 40,
+  PAUSE: 1800,
 };
+
+/**
+ * SECTION: 数据获取
+ * Nuxt 3 useFetch 组合调用
+ */
+const [{ data: members }, { data: typingTexts }, { data: statusData }] =
+  await Promise.all([
+    useFetch("/api/members"),
+    useFetch("/api/typing-text"),
+    useFetch("/api/status"),
+  ]);
+
+/**
+ * COMPOSABLE: 滚动视差逻辑
+ * 抽离滚动监听，保持 setup 清洁
+ */
+const landerRef = ref<HTMLElement | null>(null);
+const offsetY = ref(0);
 
 const handleScroll = () => {
-  if (landerRef.value) {
-    landerOffsetY.value = window.scrollY * 0.4;
+  offsetY.value = window.scrollY * SCROLL_FACTOR;
+};
+
+/**
+ * COMPOSABLE: 系统时钟与运行时间逻辑
+ */
+const systemTime = ref("");
+const systemRuntime = ref("");
+const visitorIp = computed(() => statusData.value?.ip || "127.0.0.1");
+
+const updateSystemMetrics = () => {
+  const now = new Date();
+
+  // 更新时钟
+  systemTime.value = now.toLocaleTimeString();
+
+  // 计算运行时长
+  let diff = Math.abs(now.getTime() - START_DATE.getTime());
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  diff -= days * (1000 * 60 * 60 * 24);
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  diff -= hours * (1000 * 60 * 60);
+  const mins = Math.floor(diff / (1000 * 60));
+  diff -= mins * (1000 * 60);
+  const secs = Math.floor(diff / 1000);
+
+  systemRuntime.value = `${days.toString().padStart(3, "0")}D ${hours.toString().padStart(2, "0")}H ${mins.toString().padStart(2, "0")}M ${secs.toString().padStart(2, "0")}S`;
+};
+
+/**
+ * COMPOSABLE: 打字机交互逻辑
+ */
+const currentTypingText = ref("");
+const typingState = {
+  textIndex: 0,
+  charIndex: 0,
+  isDeleting: false,
+};
+let typingTimer: ReturnType<typeof setTimeout> | null = null;
+
+const runTypingProtocol = () => {
+  const texts = typingTexts.value || [];
+  if (texts.length === 0) return;
+
+  const currentFullText = texts[typingState.textIndex];
+  const { SPEED, DELETE_SPEED, PAUSE } = TYPING_CONFIG;
+
+  if (
+    !typingState.isDeleting &&
+    typingState.charIndex < currentFullText.length
+  ) {
+    // Typing
+    typingState.charIndex++;
+    currentTypingText.value = currentFullText.substring(
+      0,
+      typingState.charIndex,
+    );
+    typingTimer = setTimeout(runTypingProtocol, SPEED);
+  } else if (
+    !typingState.isDeleting &&
+    typingState.charIndex === currentFullText.length
+  ) {
+    // End of typing, wait to delete
+    typingTimer = setTimeout(() => {
+      typingState.isDeleting = true;
+      runTypingProtocol();
+    }, PAUSE);
+  } else if (typingState.isDeleting && typingState.charIndex > 0) {
+    // Deleting
+    typingState.charIndex--;
+    currentTypingText.value = currentFullText.substring(
+      0,
+      typingState.charIndex,
+    );
+    typingTimer = setTimeout(runTypingProtocol, DELETE_SPEED);
+  } else {
+    // End of deleting, next text
+    typingState.isDeleting = false;
+    typingState.textIndex = (typingState.textIndex + 1) % texts.length;
+    runTypingProtocol();
   }
 };
 
+/**
+ * UTILS: 辅助格式化函数
+ */
+const formatId = (index: number) => (index + 1).toString().padStart(2, "0");
+
+const getMemberRole = (member: any, index: number) => {
+  if (index === 0) return "FOUNDER";
+  return (member.role || "MEMBER").toUpperCase();
+};
+
+const formatWebsite = (url?: string) => {
+  return url ? url.replace(/^https?:\/\//, "") : "NO_WEBSITE";
+};
+
+/**
+ * LIFECYCLE: 生命周期管理
+ */
+let metricsTimer: ReturnType<typeof setInterval>;
+
 onMounted(() => {
+  // 核心初始化
+  updateSystemMetrics();
+  metricsTimer = setInterval(updateSystemMetrics, 1000);
+
   if (typingTexts.value?.length) {
-    typingTimer = setTimeout(typeText, 100);
+    runTypingProtocol();
   }
-  window.addEventListener("scroll", handleScroll);
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
 });
 
 onUnmounted(() => {
   if (typingTimer) clearTimeout(typingTimer);
+  if (metricsTimer) clearInterval(metricsTimer);
   window.removeEventListener("scroll", handleScroll);
 });
 </script>
+
+<style scoped>
+/* 终端风滚动条 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #dc2626;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #dc2626 transparent;
+}
+/* 性能优化：强制开启 GPU 加速涉及动画的层 */
+[clip-path] {
+  will-change: clip-path;
+}
+/* 链接重置 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+</style>
+
+<style>
+/* ===== 大滚动条：只有红色线，没有背景 ===== */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 2px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent; /* 轨道透明 */
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #dc2626; /* 红色线 */
+  border-radius: 0;
+}
+/* Firefox */
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #dc2626 transparent;
+  background: #0a0a0a;
+}
+</style>

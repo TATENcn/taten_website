@@ -79,9 +79,9 @@ export default defineEventHandler((): IMember[] => {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/07/31/4b1f583c02e682ac790c6bfa7a52ec0b.jpg",
       name: "HungryHenry",
-      skills: ["PHP", "MySql", "Flutter软件开发", "运维", "搞机", "剪视频"],
+      skills: ["Flutter", "机器学习", "PR+AE剪辑", "web3", "php+mysql", "刷机"],
       introduction:
-        "大家好，我是 HungryHenry。个人网站使用 PHP 手搓，还使用 Flutter 开发了猜歌游戏。在我的网站上可以更详细地了解我。",
+        "HELLO! 我是 HungryHenry，一个对计算机感兴趣的中学生。目前正在使用 Flutter 开发猜歌游戏，初探地学习人工智能 (PyTorch, YOLO ...)。欲了解更多关于我，欢迎访问我的网站。",
       blogWebsite: "https://hungryhenry.cn/",
     },
     /*

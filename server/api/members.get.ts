@@ -79,9 +79,9 @@ export default defineEventHandler((): IMember[] => {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/07/31/4b1f583c02e682ac790c6bfa7a52ec0b.jpg",
       name: "HungryHenry",
-      skills: ["PHP", "MySql", "Flutter软件开发", "运维", "搞机", "剪视频"],
+      skills: ["Flutter", "机器学习", "PR+AE剪辑", "web3", "php+mysql", "刷机"],
       introduction:
-        "大家好，我是 HungryHenry。个人网站使用 PHP 手搓，还使用 Flutter 开发了猜歌游戏。在我的网站上可以更详细地了解我。",
+        "HELLO! 我是 HungryHenry，一个对计算机感兴趣的中学生。目前正在使用 Flutter 开发猜歌游戏，初探地学习人工智能 (PyTorch, YOLO ...)。欲了解更多关于我，欢迎访问我的网站。",
       blogWebsite: "https://hungryhenry.cn/",
     },
     /*
@@ -152,21 +152,18 @@ export default defineEventHandler((): IMember[] => {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/10/04/ad075fc420e282b7da4caca19546e6a3.jpg",
       blogWebsite: "https://halfline.vercel.app/",
-      introduction: `
-      大家好，我是 HalFLinEF，或者叫我 XinHallow，目前学习了前端很多知识，也尝试通过 NestJS 搭建项目，最终选择了 Rust 开发路线，希望我能和大家一起努力，一起进步。
-      欢迎大家和我说话喵~喜欢可爱的东西，是个音游吃小猫娘喵~
-      `,
+      introduction:
+        "大家好，我是 HalFLinEF，或者叫我 XinHallow。目前学习了很多技术栈，但是没有什么能拿得出手的项目。希望我能和大家一起努力，一起进步。",
       name: "HalFLinEF",
       skills: [
         "前端(TS, H5, CSS3)",
-        "前端框架(Vue3, React, Svelte)",
-        "Java 基础",
-        "后端框架(SpringBoot, Rocket)",
-        "C/C++ 基础",
-        "后端(Rust)",
-        "运维(Podman(Docker), K8S)",
-        "MQ(RabbitMQ, Kafka)",
-        "数据库(PostgreSQL, MongoDB, Redis(?))",
+        "前端框架(Vue3, React19, Svelte)",
+        "后端框架(SpringBoot, Ktor)",
+        "Rust+Tokio+Axum+SeaOrm",
+        "Podman/Docker",
+        "PostgreSQL 和 MongoDB",
+        "Redis",
+        "K8S",
       ],
     },
     {

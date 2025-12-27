@@ -29,27 +29,13 @@
       </div>
 
       <main class="grid grid-cols-1 lg:grid-cols-12 border-b border-white bg-black">
-        <section class="lg:col-span-4 border-r border-white p-0 flex flex-col">
-          <div class="p-6 border-b border-white bg-white text-black flex justify-between items-center">
-            <h2 class="text-2xl font-black uppercase tracking-tighter">01_MISSION</h2>
-            <span class="text-[10px] font-bold">EST. 2025.7.30</span>
-          </div>
-          <div class="p-10 flex-1 flex flex-col justify-between">
-            <p class="text-lg leading-relaxed text-neutral-400">
-              TATEN 是一个充满活力的计算机科学交流团队，<br />
-              汇聚了来自不同背景的技术爱好者，成员年龄从初一到本科。<br />
-              我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。<br />
-              在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
-            </p>
-            <div class="text-[10px] text-neutral-600 uppercase mt-8 font-bold">End_of_File // About</div>
-          </div>
+        <section class="lg:col-span-4 border-r border-white">
+          <SectionHeader label="01_MISSION" description="EST. 2025.7.30" />
+          <Introduction />
         </section>
 
         <section class="lg:col-span-8 p-0 border-t border-white lg:border-t-0">
-          <div class="p-6 border-b border-white bg-white text-black flex justify-between items-center">
-            <h2 class="text-2xl font-black uppercase tracking-tighter">02_OPERATORS</h2>
-            <span class="text-xs font-bold font-sans">COUNT: {{ members?.length || 0 }}</span>
-          </div>
+          <SectionHeader label="02_MEMBERS" :description="String(members?.length || 0)" />
 
           <div class="grid grid-cols-1 md:grid-cols-2">
             <div
@@ -137,10 +123,7 @@
         </section>
 
         <section class="lg:col-span-12 border-t border-white">
-          <div class="p-6 border-b border-white bg-white text-black flex justify-between items-center">
-            <h2 class="text-2xl font-black uppercase tracking-tighter">04_JOIN_PROTOCOL</h2>
-            <span class="text-[10px] font-bold tracking-[0.2em]">STATUS: OPEN_ACCESS</span>
-          </div>
+          <SectionHeader label="04_JOIN_PROTOCOL" description="STATUS: OPEN_ACCESS" />
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             <div

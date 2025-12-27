@@ -11,27 +11,15 @@ export interface IMember {
 export default defineEventHandler((): IMember[] => {
   return [
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/10/18/99d5d57c7013acb6c92305314cc66374.png",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/10/18/99d5d57c7013acb6c92305314cc66374.png",
       name: "LinMohan",
-      skills: [
-        "操作系统",
-        "计组",
-        "C/C++",
-        "Python",
-        "Linux",
-        "算法与数据结构",
-        "运维",
-        "视频剪辑",
-        "渲染",
-      ],
+      skills: ["操作系统", "计组", "C/C++", "Python", "Linux", "算法与数据结构", "运维", "视频剪辑", "渲染"],
       introduction:
         "你好，我是 Lin Mohan，一名来自山东的初中生，团队的发起者兼组织者。我热爱计算机科学与编程，喜欢研究系统底层与技术原理。熟悉 Python 与 C/C++，正在阅读《深入理解计算机系统》《现代操作系统》等书籍，并学习 408 考研相关内容。我曾学习过 OI，也在不断探索数据结构与算法。动手搭建系统、理解原理，是我最享受的过程。另外，我还是新人 UP 主，UID：2126856300，我使用 Ae、DaVinci、Pr、Blender 制作视频。现在，我希望聚集更多热爱技术的中学生，一起学习、创造、交流，共同成长。",
       blogWebsite: "https://linmohan.fun/",
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/07/30/93b3e11a33c2741a3e254bccabb47739.jpg",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/07/30/93b3e11a33c2741a3e254bccabb47739.jpg",
       name: "风与路人",
       skills: ["C++", "Python", "Hexo瞎搞", "Markdown", "KaTeX", "沟通协调"],
       introduction:
@@ -39,26 +27,14 @@ export default defineEventHandler((): IMember[] => {
       blogWebsite: "https://yaten.xyz/",
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/07/30/c5ac38277c1809ac47f5f749c4fc1fc0.png",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/07/30/c5ac38277c1809ac47f5f749c4fc1fc0.png",
       name: "susan",
-      skills: [
-        "微积分",
-        "线性代数",
-        "钢四",
-        "MC",
-        "高中数学",
-        "流体力学",
-        "JAVA",
-        "俄语",
-        "Python",
-      ],
+      skills: ["微积分", "线性代数", "钢四", "MC", "高中数学", "流体力学", "JAVA", "俄语", "Python"],
       introduction: "数学与编程的探索者，在理论与实践之间寻找平衡。",
       blogWebsite: null,
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/07/30/75fb3a7a7532703f2e7f0c095dc417f1.jpg",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/07/30/75fb3a7a7532703f2e7f0c095dc417f1.jpg",
       name: "LGCM",
       skills: ["Python", "HTML", "PHP", "CSS", "Linux", "服务器运维"],
       introduction:
@@ -66,8 +42,7 @@ export default defineEventHandler((): IMember[] => {
       blogWebsite: "http://www.lgcm.xyz/",
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/07/30/86668972c5b3fb5e440c6e1bba1f69db.png",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/07/30/86668972c5b3fb5e440c6e1bba1f69db.png",
       name: "Errorsia",
       skills: ["搞机", "C++", "Python", "Linux", "折腾各种数码产品"],
       introduction:
@@ -75,8 +50,7 @@ export default defineEventHandler((): IMember[] => {
       blogWebsite: "http://errorsia.com/",
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/07/31/4b1f583c02e682ac790c6bfa7a52ec0b.jpg",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/07/31/4b1f583c02e682ac790c6bfa7a52ec0b.jpg",
       name: "HungryHenry",
       skills: ["Flutter", "机器学习", "PR+AE剪辑", "web3", "php+mysql", "刷机"],
       introduction:
@@ -94,19 +68,9 @@ export default defineEventHandler((): IMember[] => {
     },
     */
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/07/31/1fe122170bc941cc696119b9aaca6ead.jpg",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/07/31/1fe122170bc941cc696119b9aaca6ead.jpg",
       name: "HHYYYY",
-      skills: [
-        "Python",
-        "HTML",
-        "CSS",
-        "Linux",
-        "树莓派",
-        "NAS",
-        "存算分离",
-        "英语",
-      ],
+      skills: ["Python", "HTML", "CSS", "Linux", "树莓派", "NAS", "存算分离", "英语"],
       introduction:
         "嗯我是HHYYYY，陕西人，对计算机很感兴趣，目前正在学习 Python 和前端开发。喜欢折腾树莓派和 NAS 系统，探索存算分离等技术[主要是没钱（小声）]。是那种啥都想试一下但啥都不精通的人。数学很烂！！！希望能在这个团队中与大家一起学习、分享和成长。（欢迎大家来西安玩）",
       blogWebsite: "http://hhyyyy.cn/",
@@ -132,23 +96,13 @@ export default defineEventHandler((): IMember[] => {
     {
       avatarUrl: "https://www.cn059.com/wp-content/uploads/2025/05/CN059.jpg",
       name: "CN059",
-      skills: [
-        "C/C++",
-        "Rust",
-        "Java",
-        "Vue",
-        "全栈",
-        "服务器运维",
-        "网工",
-        "ACM",
-      ],
+      skills: ["C/C++", "Rust", "Java", "Vue", "全栈", "服务器运维", "网工", "ACM"],
       introduction:
         "大家好，我是CN059，现在已经大二了，来自河北衡水，就读于云南某普通本科，喜欢折腾各种计算机技术，中期目标是想用Rust开发一个高性能分布式OJ系统，喜欢C/C++，一直在努力打ACM竞赛（虽然一般般就是了），我还想搞各种嵌入式设备。目标是实现只依靠自己或加上好朋友一起的努力，完成一切有趣的想法。拿技术武装自己。\n我喜欢搞的东西实在是很多，你跟我聊什么我大概都会很感兴趣，欢迎和我交流，人畜无害哦~\n喜欢很可爱的东西，喜欢大家(//･v･//)",
       blogWebsite: "https://www.cn059.com/",
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/10/04/ad075fc420e282b7da4caca19546e6a3.jpg",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/10/04/ad075fc420e282b7da4caca19546e6a3.jpg",
       blogWebsite: "https://halfline.vercel.app/",
       introduction:
         "大家好，我是 HalFLinEF，或者叫我 XinHallow。目前学习了很多技术栈，但是没有什么能拿得出手的项目。希望我能和大家一起努力，一起进步。",
@@ -165,8 +119,7 @@ export default defineEventHandler((): IMember[] => {
       ],
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/10/20/6b40c73972ab7a46d003bd72d544d57e.png",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/10/20/6b40c73972ab7a46d003bd72d544d57e.png",
       name: "Lukemich",
       blogWebsite: "https://saintforence.dpdns.org/",
       introduction: `
@@ -176,25 +129,14 @@ export default defineEventHandler((): IMember[] => {
       skills: ["C语言", "Linux"],
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/10/22/7f5c85486bfcb75003e696b06cb154b7.jpg",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/10/22/7f5c85486bfcb75003e696b06cb154b7.jpg",
       name: "Meteorite",
       blogWebsite: "https://lemonstar.me/",
       introduction: `Hi！我是Meteorite，2010年出生，来自上海，刚刚开始学习JavaScript，写代码，学习日语，追番，吉他，好像什么都是新人呢喵~ 虽然没有团队里面其他成员那么厉害啦，但是真的很荣幸加入这里，因为我一直对TATEN很向往喵，从今年（25年）夏天从知乎了解到TATEN之后就一直想努力学习争取可以加入团队，结果技术还没有学多少呢就先被队长拉进来了🤣目前最能拿得出手的应该就是英语了吧，在备考雅思喵喵。最喜欢的番是《别当欧尼酱了！》（刚刚入坑），之前是一个资深哈迷，会几十种咒语呢！Expelliarmus！`,
-      skills: [
-        "Python",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "英语",
-        "Hexo",
-        "Markdown",
-        "吉他",
-      ],
+      skills: ["Python", "HTML", "CSS", "JavaScript", "英语", "Hexo", "Markdown", "吉他"],
     },
     {
-      avatarUrl:
-        "https://s1.imagehub.cc/images/2025/12/26/199324eace9c01908faa52b2a703a923.png",
+      avatarUrl: "https://s1.imagehub.cc/images/2025/12/26/199324eace9c01908faa52b2a703a923.png",
       name: "CuteKitten",
       blogWebsite: "https://github.com/Lovelylavender4",
       introduction: `梨好！我是菲露露，今年13岁了，我会一点点C++语言，但是并不很强。虽然我还很年轻，有很多东西还不懂，但我会努力学习的！闲暇时我常参与小型项目开发，欢迎大家加入！我也可以加入大家的一些项目。我现在仍然在在学习阶段，希望能得到更多指导！我很喜欢结交朋友的呦！Thanks～`,

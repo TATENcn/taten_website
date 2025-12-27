@@ -5,10 +5,7 @@
     </div>
 
     <div class="p-4">
-      <NuxtLink
-        :href="value.targetUrl"
-        class="text-2xl mb-1 block hover:underline w-fit"
-      >
+      <NuxtLink :href="value.targetUrl" class="text-2xl mb-1 block hover:underline w-fit">
         {{ value.title }}
       </NuxtLink>
       <div class="text-neutral-700">{{ value.description }}</div>

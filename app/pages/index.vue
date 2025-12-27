@@ -19,30 +19,19 @@
         :style="{ transform: `translateY(${offsetY}px)` }"
       >
         <div class="z-10 text-center px-4">
-          <h1
-            class="text-[clamp(3.5rem,18vw,14rem)] font-black italic leading-[0.75] uppercase mb-10 tracking-tighter"
-          >
+          <h1 class="text-[clamp(3.5rem,18vw,14rem)] font-black italic leading-[0.75] uppercase mb-10 tracking-tighter">
             TAT<span class="text-red-600">E</span>N
           </h1>
-          <div
-            class="text-sm md:text-base border border-white px-6 py-3 inline-block tracking-widest uppercase"
-          >
-            PROTOCOL_CMD: {{ currentTypingText
-            }}<span class="animate-ping">|</span>
+          <div class="text-sm md:text-base border border-white px-6 py-3 inline-block tracking-widest uppercase">
+            PROTOCOL_CMD: {{ currentTypingText }}<span class="animate-ping">|</span>
           </div>
         </div>
       </div>
 
-      <main
-        class="grid grid-cols-1 lg:grid-cols-12 border-b border-white bg-black"
-      >
+      <main class="grid grid-cols-1 lg:grid-cols-12 border-b border-white bg-black">
         <section class="lg:col-span-4 border-r border-white p-0 flex flex-col">
-          <div
-            class="p-6 border-b border-white bg-white text-black flex justify-between items-center"
-          >
-            <h2 class="text-2xl font-black uppercase tracking-tighter">
-              01_MISSION
-            </h2>
+          <div class="p-6 border-b border-white bg-white text-black flex justify-between items-center">
+            <h2 class="text-2xl font-black uppercase tracking-tighter">01_MISSION</h2>
             <span class="text-[10px] font-bold">EST. 2025.7.30</span>
           </div>
           <div class="p-10 flex-1 flex flex-col justify-between">
@@ -52,22 +41,14 @@
               我们致力于探索计算机科学的前沿领域，分享知识与经验，共同成长。<br />
               在这里，每个人都能找到属于自己的技术道路，从系统编程到前端开发，从算法竞赛到创新项目，我们用代码连接世界，用技术改变未来。
             </p>
-            <div class="text-[10px] text-neutral-600 uppercase mt-8 font-bold">
-              End_of_File // About
-            </div>
+            <div class="text-[10px] text-neutral-600 uppercase mt-8 font-bold">End_of_File // About</div>
           </div>
         </section>
 
         <section class="lg:col-span-8 p-0 border-t border-white lg:border-t-0">
-          <div
-            class="p-6 border-b border-white bg-white text-black flex justify-between items-center"
-          >
-            <h2 class="text-2xl font-black uppercase tracking-tighter">
-              02_OPERATORS
-            </h2>
-            <span class="text-xs font-bold font-sans"
-              >COUNT: {{ members?.length || 0 }}</span
-            >
+          <div class="p-6 border-b border-white bg-white text-black flex justify-between items-center">
+            <h2 class="text-2xl font-black uppercase tracking-tighter">02_OPERATORS</h2>
+            <span class="text-xs font-bold font-sans">COUNT: {{ members?.length || 0 }}</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2">
@@ -82,34 +63,21 @@
                 {{ member.name.substring(0, 2) }}
               </div>
 
-              <div
-                class="relative h-full p-10 flex flex-col justify-between z-10"
-              >
+              <div class="relative h-full p-10 flex flex-col justify-between z-10">
                 <div>
-                  <div
-                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center justify-between"
-                  >
+                  <div class="text-[10px] text-red-600 font-bold mb-4 flex items-center justify-between">
                     <div class="flex items-center gap-2">
-                      <span
-                        class="w-2 h-2 bg-red-600"
-                        :class="{ 'animate-pulse': index === 0 }"
-                      ></span>
+                      <span class="w-2 h-2 bg-red-600" :class="{ 'animate-pulse': index === 0 }"></span>
                       [ {{ getMemberRole(member, index) }} ]
                     </div>
-                    <span class="opacity-40 font-mono"
-                      >ID:{{ formatId(index) }}</span
-                    >
+                    <span class="opacity-40 font-mono">ID:{{ formatId(index) }}</span>
                   </div>
 
                   <div class="flex gap-4 items-start mb-4">
                     <div
                       class="size-12 border border-white/20 p-0.5 grayscale group-hover:grayscale-0 group-hover:border-red-600 transition-all shrink-0"
                     >
-                      <img
-                        :src="member.avatarUrl"
-                        class="w-full h-full object-cover"
-                        :alt="member.name"
-                      />
+                      <img :src="member.avatarUrl" class="w-full h-full object-cover" :alt="member.name" />
                     </div>
                     <h3
                       class="text-4xl font-black italic tracking-tighter uppercase group-hover:text-red-600 transition-colors leading-none"
@@ -146,9 +114,7 @@
                   class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
                 >
                   <div class="flex flex-col">
-                    <span class="text-[10px] uppercase opacity-40 italic"
-                      >Node_Endpoint:</span
-                    >
+                    <span class="text-[10px] uppercase opacity-40 italic">Node_Endpoint:</span>
                     <span class="text-[10px] font-bold truncate max-w-[150px]">
                       {{ formatWebsite(member.blogWebsite) }}
                     </span>
@@ -171,36 +137,22 @@
         </section>
 
         <section class="lg:col-span-12 border-t border-white">
-          <div
-            class="p-6 border-b border-white bg-white text-black flex justify-between items-center"
-          >
-            <h2 class="text-2xl font-black uppercase tracking-tighter">
-              04_JOIN_PROTOCOL
-            </h2>
-            <span class="text-[10px] font-bold tracking-[0.2em]"
-              >STATUS: OPEN_ACCESS</span
-            >
+          <div class="p-6 border-b border-white bg-white text-black flex justify-between items-center">
+            <h2 class="text-2xl font-black uppercase tracking-tighter">04_JOIN_PROTOCOL</h2>
+            <span class="text-[10px] font-bold tracking-[0.2em]">STATUS: OPEN_ACCESS</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             <div
               class="relative h-[320px] border-r border-b border-white bg-[#0a0a0a] p-10 flex flex-col justify-between group overflow-hidden"
             >
-              <div
-                class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none uppercase"
-              >
+              <div class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none uppercase">
                 INFO
               </div>
-              <p
-                class="text-sm text-neutral-400 leading-relaxed uppercase italic z-10"
-              >
+              <p class="text-sm text-neutral-400 leading-relaxed uppercase italic z-10">
                 // 期待每一位对代码充满向往的开发者。<br /><br />
               </p>
-              <div
-                class="text-[10px] text-neutral-600 font-bold uppercase z-10"
-              >
-                System_Manifesto
-              </div>
+              <div class="text-[10px] text-neutral-600 font-bold uppercase z-10">System_Manifesto</div>
             </div>
 
             <NuxtLink
@@ -213,13 +165,9 @@
               >
                 GH
               </div>
-              <div
-                class="relative h-full p-10 flex flex-col justify-between z-10"
-              >
+              <div class="relative h-full p-10 flex flex-col justify-between z-10">
                 <div>
-                  <div
-                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2"
-                  >
+                  <div class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2">
                     <span class="w-2 h-2 bg-red-600"></span> [ PROJECTS ]
                   </div>
                   <h3
@@ -231,17 +179,13 @@
                     class="relative h-20 text-sm text-neutral-400 leading-relaxed [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] transition-all duration-700 group-hover:text-white"
                   >
                     <span class="text-red-600 mr-1 font-bold">>></span>
-                    访问我们的代码仓库，查看当前活跃项目，别忘了点亮 Star 和
-                    Follow。
+                    访问我们的代码仓库，查看当前活跃项目，别忘了点亮 Star 和 Follow。
                   </div>
                 </div>
                 <div
                   class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
                 >
-                  <span
-                    class="text-[10px] font-bold uppercase opacity-40 italic"
-                    >@TATENcn</span
-                  >
+                  <span class="text-[10px] font-bold uppercase opacity-40 italic">@TATENcn</span>
                   <div
                     class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
                   >
@@ -264,13 +208,9 @@
               >
                 QQ
               </div>
-              <div
-                class="relative h-full p-10 flex flex-col justify-between z-10"
-              >
+              <div class="relative h-full p-10 flex flex-col justify-between z-10">
                 <div>
-                  <div
-                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2"
-                  >
+                  <div class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2">
                     <span class="w-2 h-2 bg-red-600"></span> [ QQ_GROUP_LINK ]
                   </div>
                   <h3
@@ -281,17 +221,13 @@
                   <div
                     class="relative h-20 text-sm text-neutral-400 leading-relaxed [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] transition-all duration-700 group-hover:text-white"
                   >
-                    <span class="text-red-600 mr-1 font-bold">>></span> 加入 QQ
-                    群，展开技术交流。
+                    <span class="text-red-600 mr-1 font-bold">>></span> 加入 QQ 群，展开技术交流。
                   </div>
                 </div>
                 <div
                   class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
                 >
-                  <span
-                    class="text-[10px] font-bold uppercase opacity-40 italic"
-                    >TATEN_LEARN</span
-                  >
+                  <span class="text-[10px] font-bold uppercase opacity-40 italic">TATEN_LEARN</span>
                   <div
                     class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
                   >
@@ -314,15 +250,10 @@
               >
                 JN
               </div>
-              <div
-                class="relative h-full p-10 flex flex-col justify-between z-10"
-              >
+              <div class="relative h-full p-10 flex flex-col justify-between z-10">
                 <div>
-                  <div
-                    class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2"
-                  >
-                    <span class="w-2 h-2 bg-red-600 animate-ping"></span> [
-                    JOIN_US ]
+                  <div class="text-[10px] text-red-600 font-bold mb-4 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-red-600 animate-ping"></span> [ JOIN_US ]
                   </div>
                   <h3
                     class="text-4xl font-black italic tracking-tighter uppercase mb-4 group-hover:text-red-600 transition-colors leading-none"
@@ -332,17 +263,14 @@
                   <div
                     class="relative h-20 text-sm text-neutral-400 leading-relaxed [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] transition-all duration-700 group-hover:text-white"
                   >
-                    <span class="text-red-600 mr-1 font-bold">>></span> 添加 Lin
-                    Mohan 的 QQ，提交加入申请。通过验证后即可加入团队。
+                    <span class="text-red-600 mr-1 font-bold">>></span> 添加 Lin Mohan 的
+                    QQ，提交加入申请。通过验证后即可加入团队。
                   </div>
                 </div>
                 <div
                   class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
                 >
-                  <span
-                    class="text-[10px] font-bold uppercase opacity-40 italic"
-                    >@Lin_Mohan</span
-                  >
+                  <span class="text-[10px] font-bold uppercase opacity-40 italic">@Lin_Mohan</span>
                   <div
                     class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
                   >
@@ -358,9 +286,7 @@
         </section>
       </main>
 
-      <footer
-        class="p-8 text-center text-[12px] text-neutral-600 uppercase tracking-[0.4em] font-mono"
-      >
+      <footer class="p-8 text-center text-[12px] text-neutral-600 uppercase tracking-[0.4em] font-mono">
         Team Runtime · Since Establishment · {{ systemRuntime }}
       </footer>
     </div>
@@ -385,12 +311,11 @@ const TYPING_CONFIG = {
  * SECTION: 数据获取
  * Nuxt 3 useFetch 组合调用
  */
-const [{ data: members }, { data: typingTexts }, { data: statusData }] =
-  await Promise.all([
-    useFetch("/api/members"),
-    useFetch("/api/typing-text"),
-    useFetch("/api/status"),
-  ]);
+const [{ data: members }, { data: typingTexts }, { data: statusData }] = await Promise.all([
+  useFetch("/api/members"),
+  useFetch("/api/typing-text"),
+  useFetch("/api/status"),
+]);
 
 /**
  * COMPOSABLE: 滚动视差逻辑
@@ -448,21 +373,12 @@ const runTypingProtocol = () => {
   const currentFullText = texts[typingState.textIndex];
   const { SPEED, DELETE_SPEED, PAUSE } = TYPING_CONFIG;
 
-  if (
-    !typingState.isDeleting &&
-    typingState.charIndex < currentFullText.length
-  ) {
+  if (!typingState.isDeleting && typingState.charIndex < currentFullText.length) {
     // Typing
     typingState.charIndex++;
-    currentTypingText.value = currentFullText.substring(
-      0,
-      typingState.charIndex,
-    );
+    currentTypingText.value = currentFullText.substring(0, typingState.charIndex);
     typingTimer = setTimeout(runTypingProtocol, SPEED);
-  } else if (
-    !typingState.isDeleting &&
-    typingState.charIndex === currentFullText.length
-  ) {
+  } else if (!typingState.isDeleting && typingState.charIndex === currentFullText.length) {
     // End of typing, wait to delete
     typingTimer = setTimeout(() => {
       typingState.isDeleting = true;
@@ -471,10 +387,7 @@ const runTypingProtocol = () => {
   } else if (typingState.isDeleting && typingState.charIndex > 0) {
     // Deleting
     typingState.charIndex--;
-    currentTypingText.value = currentFullText.substring(
-      0,
-      typingState.charIndex,
-    );
+    currentTypingText.value = currentFullText.substring(0, typingState.charIndex);
     typingTimer = setTimeout(runTypingProtocol, DELETE_SPEED);
   } else {
     // End of deleting, next text

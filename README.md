@@ -1,7 +1,7 @@
 | 名称             | 主页链接                                                         | 简介                                           | 头像                                                                                           |
 | ---------------- | ---------------------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | **TATEN**        | [https://taten.xyz](https://taten.xyz)                           | 一群热爱编程的学生，致力于探索技术的无限可能。 | ![TATEN](https://s1.imagehub.cc/images/2025/10/18/d98ee6f0b53fceae8b21eea8cd4a1845.png)        |
-| **Lin Mohan**    | [https://home.linmohan.fun/](https://home.linmohan.fun/)         | 「代码重构世界，逻辑解构真理」                 | ![Lin Mohan](https://s1.imagehub.cc/images/2025/10/18/99d5d57c7013acb6c92305314cc66374.png)    |
+| **Lin Mohan**    | [https://linmohan.fun/](https://linmohan.fun/)         | 「代码重构世界，逻辑解构真理」                 | ![Lin Mohan](https://linmohan.fun/avatar.png)    |
 | **Yaten**        | [https://yaten-z.github.io/](https://yaten-z.github.io/)         | 「世界多变而永恒，文字孤独却自由」             | ![Yaten](https://s1.imagehub.cc/images/2025/05/30/55439681d8b3c2d988638c133e160a56.jpg)        |
 | **Susan**        | [https://mryoung2022.github.io/](https://mryoung2022.github.io/) |                                                | ![susan](https://s1.imagehub.cc/images/2025/11/29/4f89970e09825cb0f04c9989e370dc9d.png)        |
 | **HHYYYY**       | [https://hhyyyy.cn/](https://hhyyyy.cn/)                         | 用科技之眼探索世界，用光影之笔记录瞬间         | ![HHYYYY](https://s1.imagehub.cc/images/2025/07/31/1fe122170bc941cc696119b9aaca6ead.jpg)       |

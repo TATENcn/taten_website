@@ -1,37 +1,91 @@
-<template>
-  <div class="border-neutral-200 border bg-neutral-50 size-full flex flex-col">
-    <div class="flex items-center gap-x-4 p-6">
-      <LazyNuxtImg :src="value.avatarUrl" class="size-24 rounded-full" />
+<!-- TODO: 此组件未遵循项目代码规范 -->
 
-      <div>
-        <div class="text-2xl">{{ value.name }}</div>
-        <NuxtLink
-          v-if="value.blogWebsite"
-          :to="value.blogWebsite"
-          class="text-neutral-500 hover:text-neutral-800 transition"
+<template>
+  <div
+    class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none group-hover:opacity-[0.08] transition-opacity uppercase"
+  >
+    {{ member.name.substring(0, 2) }}
+  </div>
+
+  <div class="relative h-full p-10 flex flex-col justify-between z-10">
+    <div>
+      <div class="text-[10px] text-red-600 font-bold mb-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-red-600" />
+          [ {{ isFounder ? "FOUNDER" : "MEMBER" }} ]
+        </div>
+        <span class="opacity-40 font-mono">ID: {{ id }}</span>
+      </div>
+
+      <div class="flex gap-4 items-start mb-4">
+        <div
+          class="size-12 border border-white/20 p-0.5 grayscale group-hover:grayscale-0 group-hover:border-red-600 transition-all shrink-0"
         >
-          {{ value.blogWebsite.replace(/^https?:\/\//, "").replace(/\/$/, "") }}
-        </NuxtLink>
-        <div v-else class="text-neutral-500">No Website</div>
+          <img :src="member.avatarUrl" class="w-full h-full object-cover" :alt="member.name" />
+        </div>
+        <h3
+          class="text-4xl font-black italic tracking-tighter uppercase group-hover:text-red-600 transition-colors leading-none"
+        >
+          {{ member.name }}
+        </h3>
+      </div>
+
+      <div class="relative mt-2 h-20">
+        <div
+          class="absolute inset-0 text-sm text-neutral-400 leading-relaxed overflow-y-auto custom-scrollbar pr-2 transition-all duration-700 ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] group-hover:text-white text-justify [text-justify:inter-character]"
+        >
+          <span class="text-red-600 mr-1 font-bold">>></span>
+          {{ member.introduction }}
+          <div class="h-2" />
+        </div>
+        <div
+          class="absolute top-0 left-0 w-[1px] h-full bg-red-600 opacity-0 group-hover:opacity-100 group-hover:left-full transition-all duration-700 ease-out pointer-events-none shadow-[0_0_8px_rgba(220,38,38,0.8)]"
+        />
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span
+          v-for="skill in member.skills.slice(0, 3)"
+          :key="skill"
+          class="text-[9px] border border-white/20 px-1.5 py-0.5 opacity-60 group-hover:opacity-100 group-hover:border-red-600 transition-colors uppercase"
+        >
+          #{{ skill }}
+        </span>
       </div>
     </div>
 
-    <div class="px-4 text-neutral-800">{{ value.introduction }}</div>
-
-    <div class="flex gap-x-4 gap-y-2 flex-wrap p-4 mt-auto">
-      <div
-        v-for="skill in value.skills"
-        :key="skill"
-        class="flex-shrink-0 bg-neutral-200/50 rounded-full px-3 py-1 text-sm text-neutral-800"
-      >
-        {{ skill }}
+    <div
+      class="flex justify-between items-end border-t border-white/20 pt-6 group-hover:border-red-600 transition-colors"
+    >
+      <div class="flex flex-col">
+        <span class="text-[10px] uppercase opacity-40 italic">Node_Endpoint:</span>
+        <span class="text-[10px] font-bold truncate max-w-[150px]">
+          {{ formatWebsite(member.blogWebsite ?? "") }}
+        </span>
       </div>
+      <NuxtLink
+        v-if="member.blogWebsite"
+        :to="member.blogWebsite"
+        target="_blank"
+        class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:text-red-600"
+      >
+        >>
+      </NuxtLink>
     </div>
   </div>
+  <div
+    class="absolute inset-0 bg-red-600/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"
+  />
 </template>
 
-<script lang="ts" setup>
-import type { IMember } from "~/assets/data/members";
+<script setup lang="ts">
+import type { IMember } from "@@/server/api/members.get";
 
-const value = defineModel<IMember>("data", { required: true });
+const member = defineModel<IMember>("member", { required: true });
+const isFounder = defineModel<boolean>("isFounder", { required: true });
+const id = defineModel<string>("id", { required: true });
+
+const formatWebsite = (url?: string) => {
+  return url ? url.replace(/^https?:\/\//, "") : "NO_WEBSITE";
+};
 </script>

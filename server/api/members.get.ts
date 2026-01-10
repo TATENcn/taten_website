@@ -20,10 +20,10 @@ export default defineEventHandler((): IMember[] => {
     },
     {
       avatarUrl: "https://s1.imagehub.cc/images/2025/07/30/93b3e11a33c2741a3e254bccabb47739.jpg",
-      name: "风与路人",
+      name: "Yaten",
       skills: ["C++", "Python", "Hexo瞎搞", "Markdown", "KaTeX", "沟通协调"],
       introduction:
-        "halohalo，我是 风与路人。一位平平无奇在读初三生，平时喜欢捣鼓电脑、写代码，也喜欢写数学题，记录灵感与思考。虽然成绩不算顶尖，但我更关注探索知识背后的趣味与逻辑，尤其热爱信息学、文学与哲思类内容。在团队中，我希望用语言、行动和创意为团队添一份力，也愿意和伙伴们共同成长，一起做点有意思的事！本人喜欢电脑、编程、数学、社交。经常emo、发癫qwp。",
+        "halohalo，我是 Yaten。一位平平无奇在读初三生，平时喜欢捣鼓电脑、写代码，也喜欢写数学题，记录灵感与思考。虽然成绩不算顶尖，但我更关注探索知识背后的趣味与逻辑，尤其热爱信息学、文学与哲思类内容。在团队中，我希望用语言、行动和创意为团队添一份力，也愿意和伙伴们共同成长，一起做点有意思的事！本人喜欢电脑、编程、数学、社交。经常emo、发癫qwp。",
       blogWebsite: "https://yaten.xyz/",
     },
     {
@@ -106,7 +106,7 @@ export default defineEventHandler((): IMember[] => {
       blogWebsite: "https://halfline.vercel.app/",
       introduction:
         "大家好，我是 HalFLinEF，或者叫我 XinHallow。目前学习了很多技术栈，但是没有什么能拿得出手的项目。希望我能和大家一起努力，一起进步。",
-      name: "HalFLinEF",
+      name: "XinHallow",
       skills: [
         "前端",
         "前端框架",
@@ -132,7 +132,7 @@ export default defineEventHandler((): IMember[] => {
       avatarUrl: "https://s1.imagehub.cc/images/2025/10/22/7f5c85486bfcb75003e696b06cb154b7.jpg",
       name: "Meteorite",
       blogWebsite: "https://lemonstar.me/",
-      introduction: `Hi！我是Meteorite，2010年出生，来自上海，刚刚开始学习JavaScript，写代码，学习日语，追番，吉他，好像什么都是新人呢喵~ 虽然没有团队里面其他成员那么厉害啦，但是真的很荣幸加入这里，因为我一直对TATEN很向往喵，从今年（25年）夏天从知乎了解到TATEN之后就一直想努力学习争取可以加入团队，结果技术还没有学多少呢就先被队长拉进来了🤣目前最能拿得出手的应该就是英语了吧，在备考雅思喵喵。最喜欢的番是《别当欧尼酱了！》（刚刚入坑），之前是一个资深哈迷，会几十种咒语呢！Expelliarmus！`,
+      introduction: `Hi！我是Meteorite，2010年出生，来自上海，刚刚开始学习JavaScript，写代码，学习日语，追番，吉他，好像什么都是新人呢喵~ 虽然没有团队里面其他成员那么厉害啦，但是真的很荣幸加入这里，因为我一直对TATEN很向往喵，从今年（25年）夏天从知乎了解到TATEN之后就一直想努力学习争取可以加入团队，结果技术还没有学多少呢就先被LinMohan拉进来了🤣目前最能拿得出手的应该就是英语了吧，在备考雅思喵喵。最喜欢的番是《别当欧尼酱了！》（刚刚入坑），之前是一个资深哈迷，会几十种咒语呢！Expelliarmus！`,
       skills: ["Python", "HTML", "CSS", "JavaScript", "英语", "Hexo", "Markdown", "吉他"],
     },
     {

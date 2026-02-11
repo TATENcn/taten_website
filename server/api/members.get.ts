@@ -142,5 +142,13 @@ export default defineEventHandler((): IMember[] => {
       introduction: `梨好！我是菲露露，今年13岁了，我会一点点C++语言，但是并不很强。虽然我还很年轻，有很多东西还不懂，但我会努力学习的！闲暇时我常参与小型项目开发，欢迎大家加入！我也可以加入大家的一些项目。我现在仍然在在学习阶段，希望能得到更多指导！我很喜欢结交朋友的呦！Thanks～`,
       skills: ["C++", "Minecraft 开发", "萌新"],
     },
+    {
+      avatarUrl: "https://image.tianhw.top/avatar.webp",
+      name: "THW",
+      skills: ["Astro", "HTML", "CSS", "Python", "Next.js"],
+      introduction:
+        "你好，我是 THW，一名热爱前端开发的高中生。截至 2 月 11 日，我的个人博客累计浏览量已达 81.5K。平时喜欢折腾数码产品和摄影，期待与大家一起成长、共同进步！",
+      blogWebsite: "https://blog.tianhw.top/",
+    },
   ];
 });

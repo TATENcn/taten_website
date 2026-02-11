@@ -1,11 +1,15 @@
 <script setup lang="ts">
-const label = defineModel<string>("label", { required: true });
-const description = defineModel<string>("description", { required: true });
+interface SectionHeaderProps {
+  label: string;
+  description: string;
+}
+
+const props = defineProps<SectionHeaderProps>();
 </script>
 
 <template>
   <div class="p-6 bg-white text-black flex items-center">
-    <span class="text-2xl font-black uppercase tracking-tighter">{{ label }}</span>
-    <span class="ml-auto text-sm font-bold">{{ description }}</span>
+    <span class="text-2xl font-black uppercase tracking-tighter">{{ props.label }}</span>
+    <span class="ml-auto text-sm font-bold">{{ props.description }}</span>
   </div>
 </template>

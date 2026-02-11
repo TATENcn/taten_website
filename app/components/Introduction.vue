@@ -1,4 +1,3 @@
-<script setup lang="ts"></script>
 <template>
   <div class="p-8 flex flex-col">
     <div class="text-lg leading-relaxed text-neutral-400 flex flex-col">

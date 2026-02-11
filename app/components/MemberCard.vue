@@ -1,10 +1,24 @@
-<!-- TODO: 此组件未遵循项目代码规范 -->
+<script setup lang="ts">
+import type { IMember } from "@@/server/api/members.get";
+
+interface MemberCardProps {
+  member: IMember;
+  isFounder: boolean;
+  id: string;
+}
+
+const props = defineProps<MemberCardProps>();
+
+const formatWebsite = (url?: string) => {
+  return url ? url.replace(/^https?:\/\//, "") : "NO_WEBSITE";
+};
+</script>
 
 <template>
   <div
     class="absolute -right-4 -bottom-4 text-8xl font-black italic opacity-[0.03] select-none group-hover:opacity-[0.08] transition-opacity uppercase"
   >
-    {{ member.name.substring(0, 2) }}
+    {{ props.member.name.substring(0, 2) }}
   </div>
 
   <div class="relative h-full p-10 flex flex-col justify-between z-10">
@@ -12,21 +26,21 @@
       <div class="text-[10px] text-red-600 font-bold mb-4 flex items-center justify-between">
         <div class="flex items-center gap-2">
           <span class="w-2 h-2 bg-red-600" />
-          [ {{ isFounder ? "FOUNDER" : "MEMBER" }} ]
+          [ {{ props.isFounder ? "FOUNDER" : "MEMBER" }} ]
         </div>
-        <span class="opacity-40 font-mono">ID: {{ id }}</span>
+        <span class="opacity-40 font-mono">ID: {{ props.id }}</span>
       </div>
 
       <div class="flex gap-4 items-start mb-4">
         <div
           class="size-12 border border-white/20 p-0.5 grayscale group-hover:grayscale-0 group-hover:border-red-600 transition-all shrink-0"
         >
-          <img :src="member.avatarUrl" class="w-full h-full object-cover" :alt="member.name" />
+          <img :src="props.member.avatarUrl" class="w-full h-full object-cover" :alt="props.member.name" />
         </div>
         <h3
           class="text-4xl font-black italic tracking-tighter uppercase group-hover:text-red-600 transition-colors leading-none"
         >
-          {{ member.name }}
+          {{ props.member.name }}
         </h3>
       </div>
 
@@ -35,7 +49,7 @@
           class="absolute inset-0 text-sm text-neutral-400 leading-relaxed overflow-y-auto custom-scrollbar pr-2 transition-all duration-700 ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0_0_0)] group-hover:text-white text-justify [text-justify:inter-character]"
         >
           <span class="text-red-600 mr-1 font-bold">>></span>
-          {{ member.introduction }}
+          {{ props.member.introduction }}
           <div class="h-2" />
         </div>
         <div
@@ -45,7 +59,7 @@
 
       <div class="flex flex-wrap gap-2 mt-4">
         <span
-          v-for="skill in member.skills.slice(0, 3)"
+          v-for="skill in props.member.skills.slice(0, 3)"
           :key="skill"
           class="text-[9px] border border-white/20 px-1.5 py-0.5 opacity-60 group-hover:opacity-100 group-hover:border-red-600 transition-colors uppercase"
         >
@@ -60,12 +74,12 @@
       <div class="flex flex-col">
         <span class="text-[10px] uppercase opacity-40 italic">Node_Endpoint:</span>
         <span class="text-[10px] font-bold truncate max-w-[150px]">
-          {{ formatWebsite(member.blogWebsite ?? "") }}
+          {{ formatWebsite(props.member.blogWebsite ?? "") }}
         </span>
       </div>
       <NuxtLink
-        v-if="member.blogWebsite"
-        :to="member.blogWebsite"
+        v-if="props.member.blogWebsite"
+        :to="props.member.blogWebsite"
         target="_blank"
         class="text-2xl font-black translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:text-red-600"
       >
@@ -77,15 +91,3 @@
     class="absolute inset-0 bg-red-600/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"
   />
 </template>
-
-<script setup lang="ts">
-import type { IMember } from "@@/server/api/members.get";
-
-const member = defineModel<IMember>("member", { required: true });
-const isFounder = defineModel<boolean>("isFounder", { required: true });
-const id = defineModel<string>("id", { required: true });
-
-const formatWebsite = (url?: string) => {
-  return url ? url.replace(/^https?:\/\//, "") : "NO_WEBSITE";
-};
-</script>

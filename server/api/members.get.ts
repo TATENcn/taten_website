@@ -16,7 +16,7 @@ export default defineEventHandler((): IMember[] => {
       skills: ["操作系统", "计组", "C/C++", "Python", "Linux", "算法与数据结构", "运维", "视频剪辑", "渲染"],
       introduction:
         "你好，我是 Lin Mohan，一名来自山东的初中生，团队的发起者兼组织者。我热爱计算机科学与编程，喜欢研究系统底层与技术原理。熟悉 Python 与 C/C++，正在阅读《深入理解计算机系统》《现代操作系统》等书籍，并学习 408 考研相关内容。我曾学习过 OI，也在不断探索数据结构与算法。动手搭建系统、理解原理，是我最享受的过程。另外，我还是新人 UP 主，UID：2126856300，我使用 Ae、DaVinci、Pr、Blender 制作视频。现在，我希望聚集更多热爱技术的中学生，一起学习、创造、交流，共同成长。",
-      blogWebsite: "https://linmohan.fun/",
+      blogWebsite: "https://linmohan.net/",
     },
     {
       avatarUrl: "https://s1.imagehub.cc/images/2025/07/30/93b3e11a33c2741a3e254bccabb47739.jpg",

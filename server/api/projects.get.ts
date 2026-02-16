@@ -17,7 +17,7 @@ export default defineEventHandler((): IProject[] => {
     {
       imageUrl: "https://s1.imagehub.cc/images/2025/12/26/0c6c8a4c607438f7f5e04cbeb740ce34.png",
       title: "LinMH 的 B 站账号",
-      description: "Lin Mohan 的 B 站账号，现在是新人 up 主，想要大家的关注！",
+      description: "Bcamy 的 B 站账号，现在是新人 up 主，想要大家的关注！",
       targetUrl: "https://space.bilibili.com/2126856300",
     },
   ];

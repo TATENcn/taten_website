@@ -104,9 +104,9 @@
             />
             <ContactLink
               class="border-r"
-              :target="'https://qm.qq.com/q/NeWTRiJRaG'"
+              :target="'https://docs.taten.org/join-us.html'"
               head="JOIN_US"
-              description="添加 Lin Mohan 的 QQ，提交加入申请。通过验证后即可加入团队"
+              description="加入 TATEN 团队"
               title="JOIN_NOW"
               what="@LIN_MOHAN"
               bottom="JN"

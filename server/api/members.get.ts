@@ -41,6 +41,7 @@ export default defineEventHandler((): IMember[] => {
         "目前小学6年级 男生 热爱编程 熟练的语言是 Python PHP JavaScript前端开发 生日：七月五日 喜欢的动漫是：别当欧尼酱了! 热爱的游戏 CS GO 原神 绝区零 和部分手游等",
       blogWebsite: "http://www.lgcm.xyz/",
     },
+    /*
     {
       avatarUrl: "https://s1.imagehub.cc/images/2025/07/30/86668972c5b3fb5e440c6e1bba1f69db.png",
       name: "Errorsia",
@@ -57,7 +58,6 @@ export default defineEventHandler((): IMember[] => {
         "HELLO! 我是 HungryHenry，一个对计算机感兴趣的中学生。目前正在使用 Flutter 开发猜歌游戏，初探地学习人工智能 (PyTorch, YOLO ...)。欲了解更多关于我，欢迎访问我的网站。",
       blogWebsite: "https://hungryhenry.cn/",
     },
-    /*
     {
       avatarUrl:
         "https://s1.imagehub.cc/images/2025/07/31/b2e402249619e45fd0a227d7f5161d5a.jpg",
@@ -75,6 +75,7 @@ export default defineEventHandler((): IMember[] => {
         "嗯我是HHYYYY，陕西人，对计算机很感兴趣，目前正在学习 Python 和前端开发。喜欢折腾树莓派和 NAS 系统，探索存算分离等技术[主要是没钱（小声）]。是那种啥都想试一下但啥都不精通的人。数学很烂！！！希望能在这个团队中与大家一起学习、分享和成长。（欢迎大家来西安玩）",
       blogWebsite: "http://hhyyyy.cn/",
     },
+    /*
     {
       avatarUrl: "https://avatars.githubusercontent.com/u/196782409?v=4",
       name: "GuYang17",
@@ -83,7 +84,6 @@ export default defineEventHandler((): IMember[] => {
         "阿巴阿巴...我是GuYang17，浙江宁波人。喜欢写代码，尤其喜欢写TUI程序。梦想是写一个操作系统。永远不要给我打电话，因为“宁波打的电话已关机”。",
       blogWebsite: "https://guyang17.github.io/",
     },
-    /*
     {
       avatarUrl: "https://blog.zyx-2012.cn/img/avatar.png",
       name: "Zyx_2012",
@@ -135,6 +135,7 @@ export default defineEventHandler((): IMember[] => {
       introduction: `Hi！我是Meteorite，2010年出生，来自上海，刚刚开始学习JavaScript，写代码，学习日语，追番，吉他，好像什么都是新人呢喵~ 虽然没有团队里面其他成员那么厉害啦，但是真的很荣幸加入这里，因为我一直对TATEN很向往喵，从今年（25年）夏天从知乎了解到TATEN之后就一直想努力学习争取可以加入团队，结果技术还没有学多少呢就先被LinMohan拉进来了🤣目前最能拿得出手的应该就是英语了吧，在备考雅思喵喵。最喜欢的番是《别当欧尼酱了！》（刚刚入坑），之前是一个资深哈迷，会几十种咒语呢！Expelliarmus！`,
       skills: ["Python", "HTML", "CSS", "JavaScript", "英语", "Hexo", "Markdown", "吉他"],
     },
+    /*
     {
       avatarUrl: "https://s1.imagehub.cc/images/2025/12/26/199324eace9c01908faa52b2a703a923.png",
       name: "CuteKitten",
@@ -150,5 +151,6 @@ export default defineEventHandler((): IMember[] => {
         "你好，我是 THW，一名热爱前端开发的高中生。截至 2 月 11 日，我的个人博客累计浏览量已达 81.5K。平时喜欢折腾数码产品和摄影，期待与大家一起成长、共同进步！",
       blogWebsite: "https://blog.tianhw.top/",
     },
+    */
   ];
 });
